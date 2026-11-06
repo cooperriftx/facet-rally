@@ -132,6 +132,21 @@ kbd{font:600 12px/1 'Chakra Petch',monospace;background:#fff;border:1px solid va
 /* leaderboard */
 .lbrow{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:10px;background:var(--card);border-radius:12px;padding:6px 10px 6px 6px}
 .lbrow .thumb{width:44px;height:44px;border-radius:8px}
+.lbrow{cursor:pointer;border:0;text-align:left;font:inherit;color:inherit;width:100%}
+.lbrow .wr{font-size:12.5px;font-weight:700;color:var(--muted);text-align:right;white-space:nowrap}
+.lbrow .wr b{display:block;color:var(--ink);font-size:14px;font-variant-numeric:tabular-nums}
+.lbboard{background:var(--card);border-radius:12px;padding:8px 12px;margin-top:-4px}
+.lbboard ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.lbboard li{display:grid;grid-template-columns:34px 1fr auto;gap:8px;align-items:center;padding:6px 8px;border-radius:8px;font-variant-numeric:tabular-nums}
+.lbboard li.me{background:#fff3c4;font-weight:700}
+.lbboard li em{font-style:normal;font-weight:800;color:var(--muted)}
+.lbboard li:nth-child(1) em{color:#d99a00}.lbboard li:nth-child(2) em{color:#8a96ad}.lbboard li:nth-child(3) em{color:#b0682e}
+.lbboard p{margin:6px 0;color:var(--muted);font-size:13.5px}
+.lbme{display:grid;gap:6px}
+.lbme .row{display:flex;gap:8px}
+.lbme .row .txt{flex:1}
+.fonline{margin:0;font-weight:700;font-size:14px;color:#1b3d8f;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
+.fonline button{min-height:34px}
 .soon{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a5200;background:#fff3c4;border-radius:6px;padding:4px 8px;white-space:nowrap}
 
 /* challenges */
@@ -512,7 +527,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
         <button class="tile" id="nGarage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15.5 5 10a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 10l2 5.5V19H3z"/><circle cx="7.5" cy="16" r="1.3"/><circle cx="16.5" cy="16" r="1.3"/></svg>Garage<small>Car bodies, paint and more</small></button>
         <button class="tile" id="nCareer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m9 8.5 2 2 4-4M8.6 14 7 22l5-3 5 3-1.6-8"/></svg>Career<small id="careerSub">Level and achievements</small></button>
         <button class="tile" id="nEditor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-6 5-5 8-9s3-7 8-7"/><path d="m15 3 5 1-1 5"/><circle cx="4" cy="20" r="1.6"/></svg>Custom tracks<small>Build, share, open</small></button>
-        <button class="tile" id="nLb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg>Leaderboards<small>Coming soon</small></button>
+        <button class="tile" id="nLb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg>Leaderboards<small>Online, every track</small></button>
         <button class="tile" id="nMulti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4 4 0 0 1 8 0"/></svg>Multiplayer<small>Coming soon</small></button>
         <button class="tile" id="nNews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5"/></svg>News<small id="newsSub">Update 1.0</small></button>
         <button class="tile" id="nHow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5h.01"/></svg>How to play<small>Driving school, full guide</small></button>
@@ -571,7 +586,9 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
   <section id="lb" class="screen left" hidden>
     <div class="panel wide">
       <div class="subhead"><button class="back" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><h2>Leaderboards</h2></div>
-      <p class="note">Online high scores for every map are coming soon. Until then, each map shows your own best time.</p>
+      <div class="lbme"><label class="label" for="lbName" style="margin:0">Your racing name</label>
+        <div class="row"><input id="lbName" class="txt" maxlength="16" autocomplete="off" placeholder="Pick a name to post times"><button class="mini go2" id="lbNameSave">Save</button></div>
+        <p class="note" id="lbStatus" style="margin:0"></p></div>
       <div class="btns" id="lbList"></div>
     </div>
   </section>
@@ -825,6 +842,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
       <p class="fnote" id="fNote"></p>
       <div class="tags" id="fTags"></div>
       <p class="note" id="fNextMedal" style="margin:0"></p>
+      <p class="fonline" id="fOnline" hidden></p>
       <div class="fxp" id="fXp" hidden><span id="fXpT"></span><div class="xpbar"><b id="fXpB"></b></div></div>
       <dl class="fstats">
         <div><dt>Best</dt><dd id="fBest">—</dd></div>
@@ -3048,7 +3066,7 @@ function flash(text){
 
 function resetRun(){
   placeAt(T.spawnIdx);
-  Object.assign(race, { state:'ready', time:0, nextCp:0, splits:[], rec:[], keys:[], ticks:0, respawns:0, offT:0, dist:0 });
+  Object.assign(race, { state:'ready', time:0, nextCp:0, splits:[], rec:[], keys:[], ticks:0, respawns:0, offT:0, dist:0, cheated:cheatsOn() });
   T.gates.forEach(m => { m.color.set(0x22c7ff); if (m.emissive) m.emissive.set(0x0b3a52); if (m.userData.sheet) m.userData.sheet.visible = true; });
   clearSkids();
   if (T.free){ race.score = 0; T.stars.forEach(st => { st.got = false; st.m.visible = true; }); T.loops.forEach(L => { L.cool = 0; }); }
@@ -3106,7 +3124,9 @@ function finishRun(){
   race.splits[T.cps.length] = t;
   showSplit(T.cps.length, t);
   const mySplits = race.splits.slice();
-  if (isBest){ ghost = { v:2, t, splits: mySplits, f: race.rec.slice(), k: race.keys.slice() }; store.set(key, ghost); prepGhost(); }
+  const fair = !race.cheated && !cheatsOn() && !T.def.custom && !school;
+  if (isBest){ ghost = { v:2, t, splits: mySplits, f: race.rec.slice(), k: race.keys.slice(), fair }; store.set(key, ghost); prepGhost(); }
+  onlineAfterFinish(T.def.id, t, isBest && fair);
   blip(isBest ? [660, 880, 1100, 1320] : [660, 880, 990], .1); vibrate(60);
   flash('FINISH');
   const vic = VICTORY[curEq().victory] || VICTORY.v_classic;
@@ -3198,7 +3218,7 @@ function tick(){
   const live = race.state === 'ready' || race.state === 'racing';
   const gas = live && inp.gas, brake = live && inp.brake, steerT = live ? inp.steer : 0, hand = live && inp.drift;
   if (race.state === 'ready' && (gas || brake || steerT !== 0)){ race.state = 'racing'; flash('GO!'); blip([1320], .12); }
-  if (race.state === 'racing') race.time += DT*A.clock;
+  if (race.state === 'racing'){ race.time += DT*A.clock; if (cheatsOn()) race.cheated = true; }
   if (A.nitro && live && inp.nitro) c.boostT = Math.max(c.boostT, 0.15);
   if (c.loop){ rideLoop(c); return; }
 
@@ -4215,16 +4235,132 @@ function renderTrackList(){
   $('#customWrap').hidden = !defs.length;
   renderCoins(); renderChalSum();
 }
-function renderLeaderboard(){
-  const el = $('#lbList'); el.textContent = '';
-  for (const t of allDefs()){
-    if (t.free) continue;
-    const best = store.get('facet.best.' + t.id);
-    const row = document.createElement('div'); row.className = 'lbrow';
-    row.innerHTML = `<span class="thumb">${thumbSvg(t, 44)}</span><span class="tt"><b>${esc(t.name)}</b><span class="meta">Your best: <strong style="color:var(--ink)">${best ? fmt(best.t) : 'no time yet'}</strong> ${best && medalFor(t.id, best.t) ? medalSvg(medalFor(t.id, best.t).key) : ''}</span></span><span class="soon">Coming soon</span>`;
-    el.appendChild(row);
+/* ---------------- online leaderboards (Firebase) ----------------
+   Times live in Firestore at boards/<track>/times/<player id>. Each browser signs in anonymously, so a player can
+   only write their own entry. The database rules only accept a time that beats the player's previous one and is
+   no faster than 60% of the track's medal target. Runs with any admin gameplay setting never get posted. */
+const FB = { key:'AIzaSyAlJ5nVzahNiIh_Y3HedEqAc6hXuIcDghM', project:'facet-rally-a449c' };
+const FS = `https://firestore.googleapis.com/v1/projects/${FB.project}/databases/(default)/documents`;
+const SITE = 'https://cooperriftx.github.io/facet-rally/';
+let fbAuth = store.get('facet.fbAuth'), lbName = store.get('facet.lbName') || '';
+const lbOpen = new Set(), lbCache = {};
+const cleanName = v => String(v || '').replace(/[^\w .\-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 16);
+async function fbToken(){
+  if (fbAuth && fbAuth.exp > Date.now() + 60000) return fbAuth;
+  if (fbAuth && fbAuth.refresh){
+    const r = await fetch(`https://securetoken.googleapis.com/v1/token?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/x-www-form-urlencoded' }, body:'grant_type=refresh_token&refresh_token=' + encodeURIComponent(fbAuth.refresh) });
+    if (r.ok){ const d = await r.json(); fbAuth = { uid:d.user_id, id:d.id_token, refresh:d.refresh_token, exp:Date.now() + d.expires_in*1000 }; store.set('facet.fbAuth', fbAuth); return fbAuth; }
+  }
+  const r = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:'{"returnSecureToken":true}' });
+  if (!r.ok) throw new Error('sign-in ' + r.status);
+  const d = await r.json(); fbAuth = { uid:d.localId, id:d.idToken, refresh:d.refreshToken, exp:Date.now() + d.expiresIn*1000 }; store.set('facet.fbAuth', fbAuth);
+  return fbAuth;
+}
+async function lbTop(track, n = 10){
+  const r = await fetch(`${FS}/boards/${track}:runQuery?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/json' },
+    body:JSON.stringify({ structuredQuery:{ from:[{ collectionId:'times' }], orderBy:[{ field:{ fieldPath:'ms' }, direction:'ASCENDING' }], limit:n } }) });
+  if (!r.ok) throw new Error('read ' + r.status);
+  return (await r.json()).filter(x => x.document).map(x => { const f = x.document.fields || {}; return { uid:x.document.name.split('/').pop(), name:cleanName(f.name && f.name.stringValue) || 'Racer', ms:+(f.ms && f.ms.integerValue || 0) }; });
+}
+async function lbCount(track, below){
+  const q = { from:[{ collectionId:'times' }] };
+  if (below != null) q.where = { fieldFilter:{ field:{ fieldPath:'ms' }, op:'LESS_THAN', value:{ integerValue:String(below) } } };
+  const r = await fetch(`${FS}/boards/${track}:runAggregationQuery?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/json' },
+    body:JSON.stringify({ structuredAggregationQuery:{ structuredQuery:q, aggregations:[{ alias:'n', count:{} }] } }) });
+  if (!r.ok) throw new Error('count ' + r.status);
+  const d = await r.json(); return +((d[0] && d[0].result.aggregateFields.n.integerValue) || 0);
+}
+async function lbMine(track){
+  if (!fbAuth) return null;
+  const r = await fetch(`${FS}/boards/${track}/times/${fbAuth.uid}?key=${FB.key}`);
+  if (r.status === 404) return null;
+  if (!r.ok) throw new Error('read ' + r.status);
+  const f = (await r.json()).fields; return f ? +f.ms.integerValue : null;
+}
+async function lbPost(track, ms){
+  const a = await fbToken();
+  const doc = `projects/${FB.project}/databases/(default)/documents/boards/${track}/times/${a.uid}`;
+  const r = await fetch(`${FS}:commit`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + a.id },
+    body:JSON.stringify({ writes:[{ update:{ name:doc, fields:{ name:{ stringValue:lbName }, ms:{ integerValue:String(ms) }, body:{ stringValue:String(profile.equipped.body || 'b_rally').slice(0, 12) } } },
+                                    updateTransforms:[{ fieldPath:'at', setToServerValue:'REQUEST_TIME' }] }] }) });
+  delete lbCache[track];
+  return r.status;
+}
+// new bests wait here until they are posted (or the server says no), so a time set offline goes up later
+async function lbSync(){
+  if (!lbName) return;
+  const pend = store.get('facet.lbPending') || {};
+  for (const id in pend){
+    try { const st = await lbPost(id, pend[id]); if (st === 200 || st === 403 || st === 400) delete pend[id]; }
+    catch(e){ break; }
+  }
+  store.set('facet.lbPending', pend);
+}
+async function onlineAfterFinish(track, t, post){
+  const box = $('#fOnline');
+  box.hidden = true; box.textContent = '';
+  if (T.def.custom || !MEDAL_REF[track]) return;
+  const ms = Math.round(t*1000);
+  if (post){ const pend = store.get('facet.lbPending') || {}; pend[track] = Math.min(ms, pend[track] || Infinity); store.set('facet.lbPending', pend); }
+  if (cheatsOn() || race.cheated){ box.hidden = false; box.textContent = 'Admin settings on: this time stays offline.'; return; }
+  if (!lbName){
+    if (!post) return;
+    box.hidden = false; box.innerHTML = 'Post your times online? <button class="mini go2" id="fLbName">Pick a racing name</button>';
+    $('#fLbName').addEventListener('click', () => { renderLeaderboard(); showScreen('lb'); setTimeout(() => $('#lbName').focus(), 50); });
+    return;
+  }
+  try {
+    await lbSync();
+    const mine = await lbMine(track); if (mine == null) return;
+    const [ahead, total] = await Promise.all([lbCount(track, mine), lbCount(track)]);
+    box.hidden = false;
+    box.textContent = `${post ? 'Posted online! ' : ''}World rank #${ahead + 1} of ${total} on ${T.def.name}`;
+  } catch(e){ box.hidden = false; box.textContent = location.hostname.endsWith('github.io') ? 'Couldn’t reach the online leaderboard. Your time will post next time you’re online.' : 'Online leaderboards work on the Facet Rally website.'; }
+}
+function lbStatus(){
+  const st = $('#lbStatus');
+  st.textContent = lbName ? `Your new best times post online as “${lbName}”. Times set with admin settings on stay offline.` : 'Pick a name to put your best times on the online leaderboards. No account needed.';
+}
+$('#lbNameSave').addEventListener('click', () => {
+  const v = cleanName($('#lbName').value);
+  if (v.length < 2){ $('#lbStatus').textContent = 'Use 2 to 16 letters, numbers or spaces.'; return; }
+  lbName = v; store.set('facet.lbName', v); $('#lbName').value = v; lbStatus();
+  toast('Racing name saved'); lbSync().then(() => renderLeaderboard());
+});
+$('#lbName').addEventListener('keydown', e => { if (e.key === 'Enter') $('#lbNameSave').click(); });
+async function fillBoard(t, box){
+  box.innerHTML = '<p>Loading…</p>';
+  try {
+    const top = lbCache[t.id] && Date.now() - lbCache[t.id].at < 30000 ? lbCache[t.id].top : await lbTop(t.id, 10);
+    lbCache[t.id] = { at:Date.now(), top };
+    const me = fbAuth && fbAuth.uid;
+    if (!top.length){ box.innerHTML = '<p>No online times yet. Set one and be first!</p>'; return; }
+    box.innerHTML = '<ol>' + top.map((e, i) => `<li class="${e.uid === me ? 'me' : ''}"><em>${i + 1}</em><span>${esc(e.name)}${e.uid === me ? ' (you)' : ''}</span><b>${fmt(e.ms/1000)}</b></li>`).join('') + '</ol>';
+    if (me && !top.some(e => e.uid === me)){
+      const mine = await lbMine(t.id);
+      if (mine != null){ const ahead = await lbCount(t.id, mine); box.insertAdjacentHTML('beforeend', `<p>You: #${ahead + 1} with ${fmt(mine/1000)}</p>`); }
+    }
+  } catch(e){
+    box.innerHTML = `<p>Couldn’t load the online leaderboard. ${location.hostname.endsWith('github.io') ? 'Check your internet connection and try again.' : `It works on the website: <a href="${SITE}" target="_blank" rel="noopener">${SITE}</a>`}</p>`;
   }
 }
+function renderLeaderboard(){
+  $('#lbName').value = lbName; lbStatus();
+  const el = $('#lbList'); el.textContent = '';
+  for (const t of TRACKS){
+    const best = store.get('facet.best.' + t.id), m = best && medalFor(t.id, best.t);
+    const row = document.createElement('button'); row.className = 'lbrow'; row.setAttribute('aria-expanded', lbOpen.has(t.id));
+    row.innerHTML = `<span class="thumb">${thumbSvg(t, 44)}</span><span class="tt"><b>${esc(t.name)}</b><span class="meta">Your best: <strong style="color:var(--ink)">${best ? fmt(best.t) : 'no time yet'}</strong> ${m ? medalSvg(m.key) : ''}</span></span><span class="wr">${lbOpen.has(t.id) ? 'Hide' : 'Top 10'}</span>`;
+    const box = document.createElement('div'); box.className = 'lbboard'; box.hidden = !lbOpen.has(t.id);
+    row.addEventListener('click', () => {
+      if (lbOpen.has(t.id)){ lbOpen.delete(t.id); box.hidden = true; row.querySelector('.wr').textContent = 'Top 10'; }
+      else { lbOpen.add(t.id); box.hidden = false; row.querySelector('.wr').textContent = 'Hide'; fillBoard(t, box); }
+    });
+    el.append(row, box);
+    if (lbOpen.has(t.id)) fillBoard(t, box);
+  }
+}
+lbSync();
 
 /* ---------------- challenges screen ---------------- */
 function renderChallenges(){
@@ -4325,7 +4461,7 @@ function collectSave(withGhosts){
     bests[k.slice(11)] = withGhosts ? v : { v:v.v, t:v.t, splits:v.splits };
   }
   return { type:'facet-rally-save', v:1, savedAt:new Date().toISOString(), profile, custom:customTracks.map(({ uid, name, theme, width, pieces }) => ({ uid, name, theme, width, pieces })),
-           chal, bests, career:{ xp:career.xp, lvl:career.lvl, st:career.st, ach:career.ach }, settings:{ pad:settings.pad, size:settings.size, gfx:settings.gfx, ghost:settings.ghost, steer:settings.steer, weather:weatherPick } };
+           chal, bests, career:{ xp:career.xp, lvl:career.lvl, st:career.st, ach:career.ach }, settings:{ pad:settings.pad, size:settings.size, gfx:settings.gfx, ghost:settings.ghost, steer:settings.steer, weather:weatherPick, lbName } };
 }
 function applySave(o){
   if (!o || o.type !== 'facet-rally-save') throw new Error('This is not a Facet Rally save.');
@@ -4351,6 +4487,7 @@ function applySave(o){
   if (s.steer && STEER[s.steer]) setSteer(s.steer);
   if (s.ghost) setGhost(s.ghost === 'off' ? 'off' : 'on');
   if (s.weather) setWeather(s.weather);
+  if (s.lbName){ lbName = cleanName(s.lbName); store.set('facet.lbName', lbName); }
   loadDef(defById(curId) || TRACKS[0]);
   renderTrackList();
 }
@@ -4623,7 +4760,18 @@ function renderGuide(){
 }
 
 /* ---------------- news ---------------- */
-const NEWS = [{ id:'1.5', title:'Update 1.5: Six new tracks and a fresh coat of paint', date:'2026-11-06', body:`
+const NEWS = [{ id:'1.6', title:'Update 1.6: Online leaderboards', date:'2026-11-06', body:`
+  <p>Facet Rally now has real online leaderboards, and its own website: <b>cooperriftx.github.io/facet-rally</b>.</p>
+  <h4>Race the world</h4>
+  <p>Open <b>Leaderboards</b> and pick a racing name (no account or sign-up needed). From then on, every new best time you set on a track goes online, and the finish screen shows your world rank. Tap any track in Leaderboards to see its top 10 and where you stand.</p>
+  <ul>
+    <li>Every one of the 27 tracks has its own board. Custom tracks stay offline.</li>
+    <li>Runs where any admin setting was turned on never go online.</li>
+    <li>Times that are faster than a track allows are rejected automatically.</li>
+    <li>If you're offline when you set a best, it posts the next time you play online.</li>
+    <li>Your online times belong to this browser. Playing on another device starts a new entry.</li>
+  </ul>`},
+  { id:'1.5', title:'Update 1.5: Six new tracks and a fresh coat of paint', date:'2026-11-06', body:`
   <p>Six new tracks, sharper graphics, and the touch buttons now look after themselves.</p>
   <h4>Six new tracks</h4>
   <ul>
