@@ -145,6 +145,30 @@ kbd{font:600 12px/1 'Chakra Petch',monospace;background:#fff;border:1px solid va
 .lbme{display:grid;gap:6px}
 .lbme .row{display:flex;gap:8px}
 .lbme .row .txt{flex:1}
+.acct{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:var(--card);border-radius:14px;padding:12px 14px}
+.acct .av{width:44px;height:44px;border-radius:50%;background:#1f7bff;color:#fff;display:grid;place-items:center;font-weight:800;font-size:20px;flex:none}
+.acct .t{flex:1;min-width:180px;display:grid;gap:2px}.acct .t small{color:var(--muted);font-weight:600}
+.acct .acts{display:flex;gap:6px;flex-wrap:wrap}
+.gbtn{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--line);background:#fff;border-radius:11px;min-height:46px;padding:0 16px;font-weight:700;font-size:15px}
+.gbtn svg{width:20px;height:20px}
+.galrow{display:grid;grid-template-columns:56px 1fr;gap:10px;align-items:center;background:var(--card);border-radius:12px;padding:8px}
+.galrow .thumb{width:56px;height:56px;border-radius:9px;overflow:hidden}
+.galrow .tt{display:grid;gap:3px;min-width:0}.galrow .tt b{font-size:15px}
+.galrow .meta{color:var(--muted);font-size:12.5px;font-weight:600}
+.galrow .acts{grid-column:1 / -1;display:flex;gap:6px;flex-wrap:wrap}
+.mini.on{background:#ffe1ea;border-color:#ff5d8f;color:#c0124a}
+.mprow{display:flex;align-items:center;gap:10px;background:var(--card);border-radius:12px;padding:10px 12px}
+.mprow i{width:16px;height:16px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 2px rgba(0,0,0,.15)}
+.mprow b{flex:1}.mprow small{color:var(--muted);font-weight:700}
+.mpcode{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:700}
+.mpcode b{font-size:34px;letter-spacing:.14em;font-style:italic;color:var(--accent)}
+.mpjoin{display:flex;gap:8px}.mpjoin .txt{flex:1;text-transform:uppercase;letter-spacing:.12em}
+#mpPos{position:absolute;top:calc(env(safe-area-inset-top,0px) + 86px);left:50%;transform:translateX(-50%);background:rgba(19,29,51,.78);color:#fff;border-radius:10px;padding:4px 12px;font-weight:800;font-size:18px;font-style:italic}
+#mpCount{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);font-size:120px;font-weight:800;font-style:italic;color:#fff;text-shadow:0 6px 24px rgba(0,0,0,.45);pointer-events:none}
+.mpres{display:grid;gap:4px;text-align:left}
+.mpres li{display:grid;grid-template-columns:30px 1fr auto;gap:8px;padding:6px 10px;border-radius:8px;background:var(--card);font-variant-numeric:tabular-nums}
+.mpres li.me{background:#fff3c4;font-weight:700}
+.mpres ol{list-style:none;margin:0;padding:0;display:grid;gap:4px}
 .fonline{margin:0;font-weight:700;font-size:14px;color:#1b3d8f;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
 .fonline button{min-height:34px}
 .soon{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a5200;background:#fff3c4;border-radius:6px;padding:4px 8px;white-space:nowrap}
@@ -446,7 +470,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
   <div id="vig"></div>
   <div class="vignette"></div>
 
-  <div id="hud" hidden>
+  <div id="mpCount" hidden></div><div id="hud" hidden><div id="mpPos" hidden></div>
     <div class="hud-tl">
       <div class="chip cp">CP <b id="cpNow">0</b>/<span id="cpTot">0</span></div>
       <div class="chip" id="bestHud">Best —</div>
@@ -528,7 +552,8 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
         <button class="tile" id="nCareer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m9 8.5 2 2 4-4M8.6 14 7 22l5-3 5 3-1.6-8"/></svg>Career<small id="careerSub">Level and achievements</small></button>
         <button class="tile" id="nEditor"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-6 5-5 8-9s3-7 8-7"/><path d="m15 3 5 1-1 5"/><circle cx="4" cy="20" r="1.6"/></svg>Custom tracks<small>Build, share, open</small></button>
         <button class="tile" id="nLb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg>Leaderboards<small>Online, every track</small></button>
-        <button class="tile" id="nMulti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4 4 0 0 1 8 0"/></svg>Multiplayer<small>Coming soon</small></button>
+        <button class="tile" id="nMulti"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20a5.5 5.5 0 0 1 11 0M13.5 20a4 4 0 0 1 8 0"/></svg>Multiplayer<small>Race friends live</small></button>
+        <button class="tile" id="nGallery"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 16 5-5 4 4 3-3 6 6"/><circle cx="15.5" cy="8.5" r="1.5"/></svg>Track gallery<small>Play tracks by others</small></button>
         <button class="tile" id="nNews"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h13v14H6a2 2 0 0 1-2-2z"/><path d="M17 9h3v8a2 2 0 0 1-2 2M8 9h5M8 13h5"/></svg>News<small id="newsSub">Update 1.0</small></button>
         <button class="tile" id="nHow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5h.01"/></svg>How to play<small>Driving school, full guide</small></button>
         <button class="tile" id="nSave"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-4-4m4 4 4-4"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>Save &amp; load<small>Keep your progress</small></button>
@@ -619,6 +644,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
   <section id="save" class="screen left" hidden>
     <div class="panel wide">
       <div class="subhead"><button class="back" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><h2>Save &amp; load</h2></div>
+      <div><h2 class="label">Google account</h2><div class="acct" id="acct"></div></div>
       <p class="note">Your progress means your coins, garage items, best times with ghost replays, custom tracks and today's challenges. Download it as a file to keep it safe or move it to another device, then upload it to carry on.</p>
       <div class="btns two">
         <button class="go small" id="svDown">Download save</button>
@@ -719,17 +745,35 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
   <section id="multi" class="screen left" hidden>
     <div class="panel wide">
       <div class="subhead"><button class="back" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><h2>Multiplayer</h2></div>
-      <div class="soonbox"><span class="soon" style="font-size:14px">Coming soon</span>
-        <p>Racing against other people isn't ready yet. Here's what we're planning:</p>
-        <ul>
-          <li><b>Live races</b> against friends on the same track</li>
-          <li><b>Private rooms</b> you join with a short code</li>
-          <li><b>Ghost duels:</b> race someone else's best run</li>
-          <li><b>Weekly track</b> with a shared leaderboard</li>
-        </ul>
+      <div id="mpHome" class="btns">
+        <p class="note" style="margin:0">Race friends live on the same track. Make a room and send them its code or invite link, or join an open room.</p>
+        <div class="lbme"><label class="label" for="mpName" style="margin:0">Your racing name</label>
+          <div class="row"><input id="mpName" class="txt" maxlength="16" autocomplete="off" placeholder="Pick a name"><button class="mini go2" id="mpNameSave">Save</button></div></div>
+        <div class="btns two"><button class="go small" id="mpCreate">Create room</button><button class="alt" id="mpCreatePriv">Private room</button></div>
+        <div class="mpjoin"><input id="mpCode" class="txt" maxlength="4" autocomplete="off" placeholder="Room code"><button class="alt" id="mpJoin">Join</button></div>
+        <p class="note" id="mpMsg" style="margin:0"></p>
+        <div><h2 class="label">Open rooms</h2><div class="btns" id="mpOpen"></div></div>
       </div>
-      <button class="go small" disabled>Find a race</button>
-      <p class="note">Until then, share your custom tracks with a code or file and compare times.</p>
+      <div id="mpLobby" class="btns" hidden>
+        <div class="mpcode"><span>Room</span><b id="mpCodeShow"></b><button class="mini" id="mpCopy">Copy invite link</button></div>
+        <div class="btns" id="mpPlayers"></div>
+        <div id="mpHostCtl" class="btns">
+          <div><h2 class="label">Track</h2><select id="mpTrack" class="txt"></select></div>
+          <div><h2 class="label">Weather</h2><div class="seg" id="mpWx"><button data-v="clear">Clear</button><button data-v="rain">Rain</button><button data-v="snow">Snow</button><button data-v="fog">Fog</button><button data-v="night">Night</button></div></div>
+          <button class="go" id="mpStart">Start race</button>
+        </div>
+        <p class="note" id="mpWait" style="margin:0"></p>
+        <button class="alt" id="mpLeave">Leave room</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="screen left" hidden>
+    <div class="panel wide">
+      <div class="subhead"><button class="back" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><h2>Track gallery</h2></div>
+      <p class="note" style="margin:0">Tracks built by players. Race them, like your favourites or save a copy to edit. To share your own, open Custom tracks and tap Share next to a track in My tracks.</p>
+      <div class="seg" id="galSort"><button data-v="at">Newest</button><button data-v="plays">Most played</button><button data-v="likes">Most liked</button></div>
+      <div class="btns" id="galList"></div>
     </div>
   </section>
 
@@ -826,6 +870,8 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
           <button class="alt" id="pMenu">Tracks</button>
         </div>
         <button class="alt" id="pEdit" hidden>Back to editor</button>
+        <button class="go" id="pMpLobby" hidden>Everyone back to lobby</button>
+        <button class="alt" id="pMpLeave" hidden>Leave room</button>
         <div class="btns two">
           <button class="alt" id="pCam">Camera: Chase</button>
           <button class="alt" id="pPad">Buttons: On</button>
@@ -842,6 +888,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
       <p class="fnote" id="fNote"></p>
       <div class="tags" id="fTags"></div>
       <p class="note" id="fNextMedal" style="margin:0"></p>
+      <div class="mpres" id="fMp" hidden></div>
       <p class="fonline" id="fOnline" hidden></p>
       <div class="fxp" id="fXp" hidden><span id="fXpT"></span><div class="xpbar"><b id="fXpB"></b></div></div>
       <dl class="fstats">
@@ -857,6 +904,8 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
           <button class="alt" id="fMenu">Tracks</button>
         </div>
         <button class="alt" id="fEdit" hidden>Back to editor</button>
+        <button class="go" id="fMpLobby" hidden>Back to lobby</button>
+        <button class="alt" id="fMpLeave" hidden>Leave room</button>
       </div>
     </div>
   </section>
@@ -1327,7 +1376,7 @@ function validTrackData(o){
   return { uid: 'u' + Date.now().toString(36) + Math.floor(Math.random()*1e4).toString(36), name: String(o.name || 'Imported track').slice(0, 32),
            theme: THEMES[o.theme] ? o.theme : 'meadow', width: [8,10,12,14].includes(+o.width) ? +o.width : 12, pieces };
 }
-let customTracks = (store.get('facet.custom') || []).map(t => Object.assign(validTrackData(t) || {}, { uid:t.uid })).filter(t => t.pieces);
+let customTracks = (store.get('facet.custom') || []).map(t => Object.assign(validTrackData(t) || {}, { uid:t.uid }, t.shared ? { shared:String(t.shared).slice(0, 40) } : {})).filter(t => t.pieces);
 const saveCustom = () => store.set('facet.custom', customTracks);
 const allDefs = () => TRACKS.concat([FREE_DEF], customTracks.map(customDef));
 const defById = id => allDefs().find(d => d.id === id);
@@ -3127,6 +3176,7 @@ function finishRun(){
   const fair = !race.cheated && !cheatsOn() && !T.def.custom && !school;
   if (isBest){ ghost = { v:2, t, splits: mySplits, f: race.rec.slice(), k: race.keys.slice(), fair }; store.set(key, ghost); prepGhost(); }
   onlineAfterFinish(T.def.id, t, isBest && fair);
+  mpFinished(t);
   blip(isBest ? [660, 880, 1100, 1320] : [660, 880, 990], .1); vibrate(60);
   flash('FINISH');
   const vic = VICTORY[curEq().victory] || VICTORY.v_classic;
@@ -3216,8 +3266,10 @@ function autopilot(){
 function tick(){
   const c = car, S = T.S, A = admin, ST = STEER[settings.steer];
   const live = race.state === 'ready' || race.state === 'racing';
-  const gas = live && inp.gas, brake = live && inp.brake, steerT = live ? inp.steer : 0, hand = live && inp.drift;
-  if (race.state === 'ready' && (gas || brake || steerT !== 0)){ race.state = 'racing'; flash('GO!'); blip([1320], .12); }
+  const mpWait = mp.active && race.state === 'ready';
+  const gas = live && !mpWait && inp.gas, brake = live && !mpWait && inp.brake, steerT = live && !mpWait ? inp.steer : 0, hand = live && !mpWait && inp.drift;
+  if (mpWait && mpNow() >= mp.startAt){ race.state = 'racing'; race.time = Math.min(1, (mpNow() - mp.startAt)/1000); flash('GO!'); blip([1320], .12); }
+  else if (race.state === 'ready' && !mp.active && (gas || brake || steerT !== 0)){ race.state = 'racing'; flash('GO!'); blip([1320], .12); }
   if (race.state === 'racing'){ race.time += DT*A.clock; if (cheatsOn()) race.cheated = true; }
   if (A.nitro && live && inp.nitro) c.boostT = Math.max(c.boostT, 0.15);
   if (c.loop){ rideLoop(c); return; }
@@ -3955,7 +4007,7 @@ function setGfx(v){
 function cycleCam(){ if (race.state === 'replay'){ rpCycleCam(); return; } camMode = (camMode + 1) % 3; store.set('facet.cam', camMode); snapCam(); syncSegs(); }
 
 /* ---------------- screens / flow ---------------- */
-const SCREENS = ['menu','career','settings','lb','chal','garage','save','editor','howto','multi','news','pause','finish','lock','admin','paste','copyBox','confirm','tut','welcome','saveNag'];
+const SCREENS = ['menu','career','gallery','settings','lb','chal','garage','save','editor','howto','multi','news','pause','finish','lock','admin','paste','copyBox','confirm','tut','welcome','saveNag'];
 const OVERLAYS = ['lock','admin','paste','copyBox','confirm','tut','welcome','saveNag'];
 let screenNow = 'menu', adminReturn = 'menu';
 const currentScreen = () => screenNow;
@@ -3989,8 +4041,9 @@ function closeTopOverlay(){
 }
 function backToMenu(){ showScreen('menu'); renderTrackList(); }
 function startRace(){ initAudio(); fromEditor = false; rollWeather(); resetRun(); }
-function restartRun(){ if (race.state === 'replay'){ rpSeekTo(0); rp.play = true; syncRp(); return; } if (race.state !== 'menu') resetRun(); }
+function restartRun(){ if (mp.active) return; if (race.state === 'replay'){ rpSeekTo(0); rp.play = true; syncRp(); return; } if (race.state !== 'menu') resetRun(); }
 function toMenu(){
+  if (mp.active){ mpLeave(); return; }
   if (race.dist > 0){ chalEvent('dist', { m:race.dist }); race.dist = 0; }
   race.state = 'menu';
   if (school){ school = null; loadTrack(schoolPrev); }
@@ -4239,23 +4292,42 @@ function renderTrackList(){
    Times live in Firestore at boards/<track>/times/<player id>. Each browser signs in anonymously, so a player can
    only write their own entry. The database rules only accept a time that beats the player's previous one and is
    no faster than 60% of the track's medal target. Runs with any admin gameplay setting never get posted. */
-const FB = { key:'AIzaSyAlJ5nVzahNiIh_Y3HedEqAc6hXuIcDghM', project:'facet-rally-a449c' };
-const FS = `https://firestore.googleapis.com/v1/projects/${FB.project}/databases/(default)/documents`;
+const FB = { apiKey:'AIzaSyAlJ5nVzahNiIh_Y3HedEqAc6hXuIcDghM', authDomain:'facet-rally-a449c.firebaseapp.com', projectId:'facet-rally-a449c',
+             storageBucket:'facet-rally-a449c.firebasestorage.app', messagingSenderId:'580803145758', appId:'1:580803145758:web:06518ec3954c9793117e0f',
+             databaseURL:'https://facet-rally-a449c-default-rtdb.firebaseio.com' };
+FB.key = FB.apiKey; FB.project = FB.projectId;
+// local testing only: localStorage facet.emu = "1" points everything at the Firebase emulators
+const EMU = (() => { try { return localStorage.getItem('facet.emu') === '1'; } catch(e){ return false; } })();
+const FS = EMU ? `http://127.0.0.1:8080/v1/projects/${FB.project}/databases/(default)/documents` : `https://firestore.googleapis.com/v1/projects/${FB.project}/databases/(default)/documents`;
+const FB_SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
 const SITE = 'https://cooperriftx.github.io/facet-rally/';
-let fbAuth = store.get('facet.fbAuth'), lbName = store.get('facet.lbName') || '';
+let lbName = store.get('facet.lbName') || '', fbMods = null, fbUser = null, fbFailed = false;
 const lbOpen = new Set(), lbCache = {};
 const cleanName = v => String(v || '').replace(/[^\w .\-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 16);
-async function fbToken(){
-  if (fbAuth && fbAuth.exp > Date.now() + 60000) return fbAuth;
-  if (fbAuth && fbAuth.refresh){
-    const r = await fetch(`https://securetoken.googleapis.com/v1/token?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/x-www-form-urlencoded' }, body:'grant_type=refresh_token&refresh_token=' + encodeURIComponent(fbAuth.refresh) });
-    if (r.ok){ const d = await r.json(); fbAuth = { uid:d.user_id, id:d.id_token, refresh:d.refresh_token, exp:Date.now() + d.expires_in*1000 }; store.set('facet.fbAuth', fbAuth); return fbAuth; }
-  }
-  const r = await fetch(`https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/json' }, body:'{"returnSecureToken":true}' });
-  if (!r.ok) throw new Error('sign-in ' + r.status);
-  const d = await r.json(); fbAuth = { uid:d.localId, id:d.idToken, refresh:d.refreshToken, exp:Date.now() + d.expiresIn*1000 }; store.set('facet.fbAuth', fbAuth);
-  return fbAuth;
+// loads Firebase sign-in and the realtime database on first use
+function fbLoad(){
+  if (fbMods) return fbMods;
+  fbMods = (async () => {
+    const [app, auth, db] = await Promise.all(['firebase-app.js', 'firebase-auth.js', 'firebase-database.js'].map(f => import(FB_SDK + f)));
+    const A = app.initializeApp(FB), au = auth.getAuth(A), rd = db.getDatabase(A);
+    if (EMU){ auth.connectAuthEmulator(au, 'http://127.0.0.1:9099', { disableWarnings:true }); db.connectDatabaseEmulator(rd, '127.0.0.1', 9000); }
+    await au.authStateReady();
+    fbUser = au.currentUser;
+    auth.onAuthStateChanged(au, u => { fbUser = u; if (u) store.set('facet.fbUid', u.uid); renderAcct(); });
+    return { app, auth, db, A, au, rd };
+  })();
+  fbMods.catch(() => { fbMods = null; fbFailed = true; renderAcct(); });
+  return fbMods;
 }
+async function fbSignedIn(){
+  const F = await fbLoad();
+  if (!F.au.currentUser) await F.auth.signInAnonymously(F.au);
+  fbUser = F.au.currentUser; store.set('facet.fbUid', fbUser.uid);
+  return F;
+}
+async function fbToken(){ await fbSignedIn(); return { uid:fbUser.uid, id:await fbUser.getIdToken() }; }
+const myUid = () => fbUser ? fbUser.uid : store.get('facet.fbUid');
+const isGoogle = () => !!(fbUser && !fbUser.isAnonymous && fbUser.email);
 async function lbTop(track, n = 10){
   const r = await fetch(`${FS}/boards/${track}:runQuery?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/json' },
     body:JSON.stringify({ structuredQuery:{ from:[{ collectionId:'times' }], orderBy:[{ field:{ fieldPath:'ms' }, direction:'ASCENDING' }], limit:n } }) });
@@ -4271,8 +4343,8 @@ async function lbCount(track, below){
   const d = await r.json(); return +((d[0] && d[0].result.aggregateFields.n.integerValue) || 0);
 }
 async function lbMine(track){
-  if (!fbAuth) return null;
-  const r = await fetch(`${FS}/boards/${track}/times/${fbAuth.uid}?key=${FB.key}`);
+  const uid = myUid(); if (!uid) return null;
+  const r = await fetch(`${FS}/boards/${track}/times/${uid}?key=${FB.key}`);
   if (r.status === 404) return null;
   if (!r.ok) throw new Error('read ' + r.status);
   const f = (await r.json()).fields; return f ? +f.ms.integerValue : null;
@@ -4291,7 +4363,7 @@ async function lbSync(){
   if (!lbName) return;
   const pend = store.get('facet.lbPending') || {};
   for (const id in pend){
-    try { const st = await lbPost(id, pend[id]); if (st === 200 || st === 403 || st === 400) delete pend[id]; }
+    try { const st = await lbPost(id, pend[id]); if (st === 200) chalEvent('posted'); if (st === 200 || st === 403 || st === 400) delete pend[id]; }
     catch(e){ break; }
   }
   store.set('facet.lbPending', pend);
@@ -4319,7 +4391,7 @@ async function onlineAfterFinish(track, t, post){
 }
 function lbStatus(){
   const st = $('#lbStatus');
-  st.textContent = lbName ? `Your new best times post online as “${lbName}”. Times set with admin settings on stay offline.` : 'Pick a name to put your best times on the online leaderboards. No account needed.';
+  st.textContent = (lbName ? `Your new best times post online as “${lbName}”. Times set with admin settings on stay offline.` : 'Pick a name to put your best times on the online leaderboards. No account needed.') + (isGoogle() ? '' : ' Sign in with Google (in Save & load) to keep your times on every device.');
 }
 $('#lbNameSave').addEventListener('click', () => {
   const v = cleanName($('#lbName').value);
@@ -4333,7 +4405,7 @@ async function fillBoard(t, box){
   try {
     const top = lbCache[t.id] && Date.now() - lbCache[t.id].at < 30000 ? lbCache[t.id].top : await lbTop(t.id, 10);
     lbCache[t.id] = { at:Date.now(), top };
-    const me = fbAuth && fbAuth.uid;
+    const me = myUid();
     if (!top.length){ box.innerHTML = '<p>No online times yet. Set one and be first!</p>'; return; }
     box.innerHTML = '<ol>' + top.map((e, i) => `<li class="${e.uid === me ? 'me' : ''}"><em>${i + 1}</em><span>${esc(e.name)}${e.uid === me ? ' (you)' : ''}</span><b>${fmt(e.ms/1000)}</b></li>`).join('') + '</ol>';
     if (me && !top.some(e => e.uid === me)){
@@ -4361,6 +4433,408 @@ function renderLeaderboard(){
   }
 }
 lbSync();
+
+/* ---------------- Google account and cloud save ----------------
+   Signing in links the browser's anonymous player to a Google account, so leaderboard times keep their owner.
+   Progress (the same data as a save code) is stored at saves/<uid> and uploaded every 20 seconds when it changes. */
+const cloud = { on:false, last:'', at:0, state:'' };
+const saveCmp = o => JSON.stringify(Object.assign({}, o, { savedAt:0 }));
+const GLOGO = '<svg viewBox="0 0 24 24"><path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.4h6.5a5.6 5.6 0 0 1-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.7z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-2.9l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.3 14.3a7.2 7.2 0 0 1 0-4.6V6.6h-4a12 12 0 0 0 0 10.8z"/><path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4A12 12 0 0 0 1.3 6.6l4 3.1c.9-2.9 3.6-4.9 6.7-4.9z"/></svg>';
+async function cloudGet(){
+  const r = await fetch(`${FS}/saves/${fbUser.uid}`, { headers:{ Authorization:'Bearer ' + await fbUser.getIdToken() } });
+  if (r.status === 404) return null;
+  if (!r.ok) throw new Error('load ' + r.status);
+  const f = (await r.json()).fields; return f && f.data ? JSON.parse(f.data.stringValue) : null;
+}
+async function cloudPut(force){
+  if (!isGoogle() || (!cloud.on && !force)) return;
+  const o = collectSave(false), cmp = saveCmp(o);
+  if (cmp === cloud.last && !force) return;
+  const doc = `projects/${FB.project}/databases/(default)/documents/saves/${fbUser.uid}`;
+  const r = await fetch(`${FS}:commit`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + await fbUser.getIdToken() },
+    body:JSON.stringify({ writes:[{ update:{ name:doc, fields:{ data:{ stringValue:JSON.stringify(o) }, v:{ integerValue:'1' } } }, updateTransforms:[{ fieldPath:'at', setToServerValue:'REQUEST_TIME' }] }] }) });
+  if (!r.ok) throw new Error('save ' + r.status);
+  cloud.last = cmp; cloud.at = Date.now(); cloud.on = true;
+  store.set('facet.cloud', { uid:fbUser.uid, at:Date.parse(o.savedAt) });
+  renderAcct();
+}
+function cloudLoad(o){
+  applySave(o);
+  cloud.last = saveCmp(collectSave(false)); cloud.on = true; cloud.at = Date.now();
+  store.set('facet.cloud', { uid:fbUser.uid, at:Date.parse(o.savedAt) || Date.now() });
+  toast('Progress loaded from your Google account'); renderAcct();
+}
+// decides what to do the first time a signed-in account is seen on this device (or when another device saved since)
+async function cloudStart(){
+  if (!isGoogle()) return;
+  cloud.state = 'checking'; renderAcct();
+  try {
+    const remote = await cloudGet(), mark = store.get('facet.cloud') || {};
+    if (!remote){ await cloudPut(true); toast('Cloud save is on'); return; }
+    const remoteAt = Date.parse(remote.savedAt) || 0;
+    if (mark.uid === fbUser.uid && remoteAt <= (mark.at || 0) + 1000){ cloud.on = true; await cloudPut(); return; }
+    cloud.on = false; cloud.state = 'choose'; renderAcct();
+    confirmBox(mark.uid === fbUser.uid ? 'Newer progress in your account' : 'Use your account’s progress?',
+      summary(remote).replace('This save', 'Your Google account').replace('It will replace your current progress.', 'Loading it replaces the progress on this device. If you cancel, you can choose later in Save & load.'),
+      'Load it', () => cloudLoad(remote));
+  } catch(e){ cloud.state = 'error'; renderAcct(); }
+  finally { if (cloud.state === 'checking') cloud.state = ''; renderAcct(); }
+}
+async function googleSignIn(){
+  let F;
+  try { F = await fbSignedIn(); } catch(e){ toast('Couldn’t reach Google. Check your connection.'); return; }
+  const prov = new F.auth.GoogleAuthProvider();
+  await googleAttach(F, () => F.auth.linkWithPopup(F.au.currentUser, prov), () => F.auth.signInWithPopup(F.au, prov));
+}
+// shared by the real pop-up and by tests: link this browser's player to Google, or switch to the Google account if it already plays elsewhere
+async function googleAttach(F, link, signIn){
+  try {
+    if (F.au.currentUser && F.au.currentUser.isAnonymous) await link();
+    else await signIn();
+  } catch(e){
+    if (e.code === 'auth/credential-already-in-use' || e.code === 'auth/email-already-in-use'){
+      // this Google account already plays on another device: switch to it, then re-post this device's fair bests under it
+      const cred = F.auth.GoogleAuthProvider.credentialFromError(e);
+      try { if (cred) await F.auth.signInWithCredential(F.au, cred); else await signIn(); } catch(e2){ toast('Sign-in failed. Try again.'); return; }
+      const pend = store.get('facet.lbPending') || {};
+      for (const k of store.keys('facet.best.')){ const b = store.get(k), id = k.slice(11); if (b && b.fair && MEDAL_REF[id]) pend[id] = Math.min(pend[id] || Infinity, Math.round(b.t*1000)); }
+      store.set('facet.lbPending', pend);
+    } else if (e.code === 'auth/popup-closed-by-user' || e.code === 'auth/cancelled-popup-request') return;
+    else if (e.code === 'auth/operation-not-allowed'){ toast('Google sign-in isn’t switched on for this game yet.'); return; }
+    else if (e.code === 'auth/popup-blocked'){ toast('Your browser blocked the sign-in window. Allow pop-ups for this site and try again.'); return; }
+    else { toast('Sign-in failed: ' + esc(e.code || e.message)); return; }
+  }
+  fbUser = F.au.currentUser; await fbUser.getIdToken(true);
+  if (!lbName && fbUser.displayName){ lbName = cleanName(fbUser.displayName.split(' ')[0]); if (lbName.length >= 2) store.set('facet.lbName', lbName); else lbName = ''; }
+  toast(`Signed in as ${esc(fbUser.displayName || fbUser.email)}`);
+  lbSync(); cloudStart();
+}
+async function googleSignOut(){
+  const F = await fbLoad(); await cloudPut().catch(() => {});
+  cloud.on = false; cloud.last = ''; await F.auth.signOut(); fbUser = null; renderAcct(); toast('Signed out');
+}
+function renderAcct(){
+  const box = $('#acct'); if (!box) return;
+  const sub = $('#nSave small');
+  if (fbFailed && !fbUser){ box.innerHTML = `<div class="t"><b>Online features are offline</b><small>Google sign-in needs an internet connection and the Facet Rally website: ${SITE}</small></div><div class="acts"><button class="mini" id="acRetry">Try again</button></div>`; $('#acRetry').onclick = () => { fbFailed = false; fbLoad(); renderAcct(); }; return; }
+  if (!isGoogle()){
+    box.innerHTML = `<div class="t"><b>Keep your progress on every device</b><small>Sign in with Google and your coins, cars, best times, career and custom tracks save to your account automatically. Your leaderboard times come with you too.</small></div><div class="acts"><button class="gbtn" id="acIn">${GLOGO}Sign in with Google</button></div>`;
+    $('#acIn').onclick = googleSignIn;
+    if (sub) sub.textContent = 'Keep your progress';
+    return;
+  }
+  const nm = fbUser.displayName || fbUser.email, ago = cloud.at ? Math.max(0, Math.round((Date.now() - cloud.at)/60000)) : null;
+  const status = cloud.state === 'checking' ? 'Checking your cloud save…' : cloud.state === 'error' ? 'Couldn’t reach your cloud save. It will try again.' :
+                 cloud.on ? `Cloud save on${ago != null ? ` · saved ${ago ? ago + ' min ago' : 'just now'}` : ''}` : 'Cloud save paused: your account has different progress. Pick which to keep.';
+  box.innerHTML = `<span class="av">${esc((nm || '?')[0].toUpperCase())}</span><div class="t"><b>${esc(nm)}</b><small>${esc(fbUser.email || '')}</small><small>${status}</small></div>` +
+    `<div class="acts">${cloud.on ? '<button class="mini go2" id="acSave">Save now</button>' : '<button class="mini go2" id="acUp">Keep this device’s progress</button>'}<button class="mini" id="acLoad">Load from account</button><button class="mini" id="acOut">Sign out</button></div>`;
+  const up = $('#acSave') || $('#acUp');
+  up.onclick = () => cloudPut(true).then(() => toast('Saved to your Google account')).catch(() => toast('Couldn’t save right now'));
+  $('#acLoad').onclick = async () => { try { const o = await cloudGet(); if (!o){ toast('Nothing saved in your account yet'); return; } confirmBox('Load from your account?', summary(o), 'Load it', () => cloudLoad(o)); } catch(e){ toast('Couldn’t reach your cloud save'); } };
+  $('#acOut').onclick = googleSignOut;
+  if (sub) sub.textContent = cloud.on ? 'Signed in · cloud save on' : 'Signed in';
+}
+setInterval(() => { if (cloud.on && isGoogle()) cloudPut().catch(() => {}); }, 20000);
+addEventListener('visibilitychange', () => { if (document.hidden && cloud.on && isGoogle()) cloudPut().catch(() => {}); });
+// load the sign-in code soon after start (sign-in pop-ups must open straight from a tap, so it has to be ready first)
+setTimeout(() => { fbLoad().then(() => { if (isGoogle()) cloudStart(); }).catch(() => {}); }, 2500);
+
+/* ---------------- track gallery (shared custom tracks) ---------------- */
+let galSort = 'at', galPlayed = new Set();
+const galLiked = new Set(store.get('facet.liked') || []);
+const fsVal = v => v == null ? null : 'stringValue' in v ? v.stringValue : 'integerValue' in v ? +v.integerValue : 'timestampValue' in v ? v.timestampValue : null;
+async function galQuery(){
+  const r = await fetch(`${FS}:runQuery?key=${FB.key}`, { method:'POST', headers:{ 'Content-Type':'application/json' },
+    body:JSON.stringify({ structuredQuery:{ from:[{ collectionId:'tracks' }], orderBy:[{ field:{ fieldPath:galSort }, direction:'DESCENDING' }], limit:40 } }) });
+  if (!r.ok) throw new Error('gallery ' + r.status);
+  return (await r.json()).filter(x => x.document).map(x => { const f = x.document.fields, o = { id:x.document.name.split('/').pop() }; for (const k in f) o[k] = fsVal(f[k]); return o; });
+}
+const galTrack = g => validTrackData({ name:g.name, theme:g.theme, width:g.width, pieces:String(g.pieces || '').split('') });
+async function fsCommit(writes){
+  const a = await fbToken();
+  const r = await fetch(`${FS}:commit`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + a.id }, body:JSON.stringify({ writes }) });
+  return r.status;
+}
+const fsDoc = p => `projects/${FB.project}/databases/(default)/documents/${p}`;
+async function renderGallery(){
+  $('#galSort').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.v === galSort));
+  const el = $('#galList'); el.innerHTML = '<p class="note">Loading…</p>';
+  let list;
+  try { list = await galQuery(); }
+  catch(e){ el.innerHTML = `<p class="note">Couldn’t load the gallery. ${location.hostname.endsWith('github.io') ? 'Check your internet connection.' : `It works on the website: <a href="${SITE}" target="_blank" rel="noopener">${SITE}</a>`}</p>`; return; }
+  el.textContent = '';
+  if (!list.length){ el.innerHTML = '<p class="note">No shared tracks yet. Build one in Custom tracks and be the first to share!</p>'; return; }
+  const me = myUid();
+  for (const g of list){
+    const t = galTrack(g); if (!t) continue;
+    t.uid = 'g' + g.id;
+    const def = customDef(t), mine = g.uid === me, liked = galLiked.has(g.id);
+    const row = document.createElement('div'); row.className = 'galrow';
+    row.innerHTML = `<span class="thumb">${thumbSvg(def, 56)}</span><span class="tt"><b>${esc(t.name)}</b><span class="meta">by ${esc(g.author || 'Racer')}${mine ? ' (you)' : ''} · ${t.pieces.length} pieces · ${THEMES[t.theme].name} · ${def.km.toFixed(2)} km</span>` +
+      `<span class="meta">▶ ${g.plays || 0} play${g.plays === 1 ? '' : 's'} · ♥ <span class="lk">${g.likes || 0}</span> like${g.likes === 1 ? '' : 's'}</span></span>` +
+      `<div class="acts"><button class="mini go2" data-a="play">Race</button><button class="mini${liked ? ' on' : ''}" data-a="like">${liked ? '♥ Liked' : '♡ Like'}</button><button class="mini" data-a="copy">Save a copy</button>${mine ? '<button class="mini" data-a="del">Delete</button>' : ''}</div>`;
+    row.addEventListener('click', async e => {
+      const b = e.target.closest('[data-a]'); if (!b) return;
+      const a = b.dataset.a;
+      if (a === 'play'){
+        initAudio(); fromEditor = false; loadDef(def); resetRun();
+        if (!galPlayed.has(g.id)){ galPlayed.add(g.id); fsCommit([{ transform:{ document:fsDoc('tracks/' + g.id), fieldTransforms:[{ fieldPath:'plays', increment:{ integerValue:'1' } }] } }]).catch(() => {}); }
+      }
+      if (a === 'like' && !galLiked.has(g.id)){
+        b.disabled = true;
+        try {
+          const uid = (await fbToken()).uid;
+          const st = await fsCommit([{ update:{ name:fsDoc(`tracks/${g.id}/likes/${uid}`), fields:{} } }, { transform:{ document:fsDoc('tracks/' + g.id), fieldTransforms:[{ fieldPath:'likes', increment:{ integerValue:'1' } }] } }]);
+          galLiked.add(g.id); store.set('facet.liked', [...galLiked]);
+          b.classList.add('on'); b.textContent = '♥ Liked';
+          if (st === 200){ const lk = row.querySelector('.lk'); lk.textContent = +lk.textContent + 1; }
+        } catch(err){ toast('Couldn’t like it right now'); }
+        b.disabled = false;
+      }
+      if (a === 'copy'){ const c = galTrack(g); customTracks.push(c); saveCustom(); toast(`Saved “${esc(c.name)}” to My tracks`); }
+      if (a === 'del') confirmBox('Remove from the gallery?', `“${t.name}” will be removed from the gallery for everyone. Your own copy in My tracks stays.`, 'Remove', async () => {
+        const st = await fsCommit([{ delete:fsDoc('tracks/' + g.id) }]).catch(() => 0);
+        if (st === 200){ toast('Removed from the gallery'); for (const c of customTracks) if (c.shared === g.id) delete c.shared; saveCustom(); renderGallery(); } else toast('Couldn’t remove it right now');
+      });
+    });
+    el.appendChild(row);
+  }
+}
+async function shareTrack(t){
+  if (!lbName){ toast('Pick a racing name first (in Leaderboards or Multiplayer)'); return; }
+  if (t.shared){ showScreen('gallery'); renderGallery(); return; }
+  const id = Array.from(crypto.getRandomValues(new Uint8Array(15)), x => 'abcdefghijklmnopqrstuvwxyz0123456789'[x % 36]).join('');
+  try {
+    const uid = (await fbToken()).uid;
+    const st = await fsCommit([{ update:{ name:fsDoc('tracks/' + id), fields:{ name:{ stringValue:String(t.name || 'Custom track').slice(0, 32) }, author:{ stringValue:lbName }, theme:{ stringValue:t.theme },
+      width:{ integerValue:String(t.width) }, pieces:{ stringValue:t.pieces.join('') }, uid:{ stringValue:uid }, plays:{ integerValue:'0' }, likes:{ integerValue:'0' } } },
+      currentDocument:{ exists:false }, updateTransforms:[{ fieldPath:'at', setToServerValue:'REQUEST_TIME' }] }]);
+    if (st !== 200) throw new Error('share ' + st);
+    t.shared = id; saveCustom(); renderEdList(); toast(`Shared “${esc(t.name)}” to the Track gallery`);
+  } catch(e){ toast(location.hostname.endsWith('github.io') ? 'Couldn’t share right now. Check your connection.' : 'Sharing works on the Facet Rally website.'); }
+}
+$('#galSort').addEventListener('click', e => { const b = e.target.closest('button'); if (b){ galSort = b.dataset.v; renderGallery(); } });
+
+/* ---------------- multiplayer (Firebase Realtime Database) ----------------
+   rooms/<code>/meta holds the host, track, weather and race start time; rooms/<code>/players/<uid> holds each car.
+   Everyone starts on the host's countdown, sends their car 10 times a second and sees the others as moving cars. */
+const mp = { code:null, meta:null, players:{}, offs:0, subs:[], sendT:0, cars:{}, round:0, active:false, startAt:0, lastCount:-1, pub:false, F:null };
+const MP_MAX = 8;
+const mpNow = () => Date.now() + mp.offs;
+const mpIsHost = () => !!(mp.meta && mp.meta.host === myUid());
+const mpRef = p => mp.F.db.ref(mp.F.rd, p);
+function mpSetMsg(t){ $('#mpMsg').textContent = t || ''; }
+async function mpReady(){
+  if (!lbName){ throw new Error('Pick a racing name first.'); }
+  const F = await fbSignedIn(); mp.F = F;
+  if (!mp.offSub){ mp.offSub = F.db.onValue(F.db.ref(F.rd, '.info/serverTimeOffset'), s => { mp.offs = s.val() || 0; }); }
+  return F;
+}
+function mpRenderHome(){
+  $('#mpName').value = lbName;
+  $('#mpHome').hidden = !!mp.code; $('#mpLobby').hidden = !mp.code;
+  if (!mp.code) mpWatchOpen();
+}
+function mpWatchOpen(){
+  const el = $('#mpOpen');
+  fbSignedIn().then(F => {
+    mp.F = F;
+    if (mp.openSub) return;
+    mp.openSub = F.db.onValue(F.db.ref(F.rd, 'open'), snap => {
+      const now = Date.now() + mp.offs, rooms = [];
+      snap.forEach(c => { const v = c.val(); if (v && v.at && now - v.at < 5*60000) rooms.push(Object.assign({ code:c.key }, v)); });
+      el.textContent = '';
+      if (!rooms.length){ el.innerHTML = '<p class="note" style="margin:0">No open rooms right now. Create one!</p>'; return; }
+      for (const r of rooms){
+        const t = trackById(r.track), row = document.createElement('div'); row.className = 'mprow';
+        row.innerHTML = `<b>${esc(r.name || 'Room')}’s room</b><small>${esc(t ? t.name : r.track)} · ${r.n || 1}/${MP_MAX}</small><button class="mini go2">Join</button>`;
+        row.querySelector('button').onclick = () => mpJoin(r.code);
+        el.appendChild(row);
+      }
+    }, () => { el.innerHTML = '<p class="note" style="margin:0">Couldn’t load open rooms.</p>'; });
+  }).catch(() => { el.innerHTML = `<p class="note" style="margin:0">Multiplayer needs an internet connection and works on the Facet Rally website: ${SITE}</p>`; });
+}
+async function mpCreate(pub){
+  try {
+    const F = await mpReady(), A = 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+    let code;
+    for (let k = 0; k < 6; k++){ code = Array.from({ length:4 }, () => A[Math.floor(Math.random()*A.length)]).join(''); if (!(await F.db.get(mpRef(`rooms/${code}/meta`))).exists()) break; }
+    const track = TRACKS.some(t => t.id === curId) ? curId : 'meadow';
+    await F.db.set(mpRef(`rooms/${code}/meta`), { host:myUid(), track, wx:'clear', state:'lobby', round:0, startAt:0, pub:pub ? 1 : 0, at:F.db.serverTimestamp() });
+    await mpJoin(code);
+  } catch(e){ mpSetMsg(e.message.includes('name') ? e.message : 'Couldn’t create a room. ' + (location.hostname.endsWith('github.io') ? 'Check your connection.' : `Multiplayer works on the website: ${SITE}`)); }
+}
+async function mpJoin(code){
+  code = String(code || '').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 4);
+  if (code.length !== 4){ mpSetMsg('Room codes are 4 letters.'); return; }
+  try {
+    const F = await mpReady();
+    const meta = (await F.db.get(mpRef(`rooms/${code}/meta`))).val();
+    if (!meta){ mpSetMsg(`There’s no room called ${code}.`); return; }
+    const players = (await F.db.get(mpRef(`rooms/${code}/players`))).val() || {};
+    if (Object.keys(players).length >= MP_MAX && !players[myUid()]){ mpSetMsg('That room is full.'); return; }
+    mpLeave(true);
+    mp.code = code; mp.round = meta.round || 0;
+    const me = mpRef(`rooms/${code}/players/${myUid()}`);
+    await F.db.set(me, { name:lbName, col:'#' + carM.paint.color.getHexString(), body:profile.equipped.body || 'b_rally', joined:F.db.serverTimestamp(), round:-1, fin:0, q:0 });
+    F.db.onDisconnect(me).remove();
+    mp.subs.push(F.db.onValue(mpRef(`rooms/${code}/meta`), s => mpOnMeta(s.val())));
+    mp.subs.push(F.db.onValue(mpRef(`rooms/${code}/players`), s => mpOnPlayers(s.val() || {})));
+    mp.beat = setInterval(mpHeartbeat, 60000);
+    history.replaceState(null, '', location.pathname + '?room=' + code);
+    mpSetMsg(''); showScreen('multi'); mpRenderHome(); mpRenderLobby();
+  } catch(e){ mpSetMsg(e.message.includes('name') ? e.message : 'Couldn’t join that room.'); }
+}
+function mpHeartbeat(){
+  if (!mp.code || !mpIsHost() || !mp.meta.pub) return;
+  const n = Object.keys(mp.players).length;
+  mp.F.db.set(mpRef(`open/${mp.code}`), { host:myUid(), track:mp.meta.track, name:lbName, n, at:mp.F.db.serverTimestamp() }).catch(() => {});
+}
+function mpOnMeta(m){
+  if (!m){ if (mp.code){ toast('The room was closed'); mpLeave(); } return; }
+  const wasHost = mpIsHost(); mp.meta = m;
+  if (mpIsHost() && !wasHost && m.pub){ mpHeartbeat(); mp.F.db.onDisconnect(mpRef(`open/${mp.code}`)).remove(); }
+  if (m.state === 'race' && m.round > mp.round) mpStartRace(m);
+  else if (m.state === 'lobby' && mp.active){ mpEndRace(); showScreen('multi'); mpRenderHome(); }
+  mpRenderLobby(); if (mp.active) syncMpUi();
+}
+function mpOnPlayers(p){
+  mp.players = p;
+  // if the host left, the player who joined earliest takes over
+  if (mp.meta && !p[mp.meta.host]){
+    const first = Object.entries(p).sort((a, b) => (a[1].joined || 0) - (b[1].joined || 0) || (a[0] < b[0] ? -1 : 1))[0];
+    if (first && first[0] === myUid()) mp.F.db.set(mpRef(`rooms/${mp.code}/meta`), Object.assign({}, mp.meta, { host:myUid() })).then(() => toast('You’re the host now')).catch(() => {});
+  }
+  if (mpIsHost()) mpHeartbeat();
+  mpRenderLobby(); mpRenderResults();
+}
+function mpRenderLobby(){
+  if (!mp.code || !mp.meta) return;
+  $('#mpCodeShow').textContent = mp.code;
+  const el = $('#mpPlayers'); el.textContent = '';
+  for (const [uid, v] of Object.entries(mp.players).sort((a, b) => (a[1].joined || 0) - (b[1].joined || 0))){
+    const row = document.createElement('div'); row.className = 'mprow';
+    row.innerHTML = `<i style="background:${/^#[0-9a-f]{6}$/i.test(v.col) ? v.col : '#888'}"></i><b>${esc(v.name || 'Racer')}${uid === myUid() ? ' (you)' : ''}</b><small>${uid === mp.meta.host ? 'Host' : ''}</small>`;
+    el.appendChild(row);
+  }
+  const host = mpIsHost(), t = trackById(mp.meta.track);
+  $('#mpHostCtl').hidden = !host;
+  $('#mpWait').textContent = host ? `${Object.keys(mp.players).length} of ${MP_MAX} racers. Pick a track and start when everyone’s in.` : `Waiting for the host to start. Track: ${t ? t.name : mp.meta.track} · ${(WEATHER[mp.meta.wx] || WEATHER.clear).name}`;
+  const sel = $('#mpTrack');
+  if (!sel.options.length) sel.innerHTML = TRACKS.map(t => `<option value="${t.id}">${esc(t.name)} (${t.real ? 'F1' : t.diff})</option>`).join('');
+  sel.value = mp.meta.track;
+  $('#mpWx').querySelectorAll('button').forEach(b => b.classList.toggle('on', b.dataset.v === (mp.meta.wx || 'clear')));
+}
+function mpSetMeta(patch){ if (mpIsHost()) mp.F.db.update(mpRef(`rooms/${mp.code}/meta`), Object.assign({ host:myUid(), track:mp.meta.track, state:mp.meta.state }, patch)).catch(() => toast('Couldn’t update the room')); }
+function mpStartRace(m){
+  mp.round = m.round; mp.startAt = m.startAt; mp.active = true; mp.lastCount = -1;
+  if (curId !== m.track || (T && T.def.custom)) loadTrack(m.track);
+  curWeather = WEATHER[m.wx] ? m.wx : 'clear'; applyTheme(T.th); carM.beams.visible = !!(T.th.dark || curWeather === 'night');
+  fromEditor = false; resetRun(); mpClearCars();
+  mp.F.db.update(mpRef(`rooms/${mp.code}/players/${myUid()}`), { name:lbName, round:m.round, fin:0, q:0, adm:0 }).catch(() => {});
+  showScreen(null); syncMpUi();
+}
+function mpRestoreWeather(){ if (weatherPick !== 'random' && curWeather !== weatherPick){ curWeather = weatherPick; if (T) applyTheme(T.th); } }
+function mpEndRace(){ mp.active = false; mpClearCars(); race.state = 'menu'; mpRestoreWeather(); syncMpUi(); }
+function mpLeave(silent){
+  if (mp.code && mp.F){
+    const F = mp.F;
+    F.db.remove(mpRef(`rooms/${mp.code}/players/${myUid()}`)).catch(() => {});
+    F.db.onDisconnect(mpRef(`rooms/${mp.code}/players/${myUid()}`)).cancel().catch(() => {});
+    if (mpIsHost() && Object.keys(mp.players).length <= 1) F.db.remove(mpRef(`open/${mp.code}`)).catch(() => {});
+  }
+  mp.subs.forEach(u => u()); mp.subs = []; clearInterval(mp.beat);
+  const was = mp.active;
+  Object.assign(mp, { code:null, meta:null, players:{}, active:false, round:0 });
+  mpRestoreWeather();
+  mpClearCars();
+  if (location.search.includes('room=')) history.replaceState(null, '', location.pathname);
+  if (!silent){ if (was) race.state = 'menu'; showScreen('multi'); mpRenderHome(); }
+  syncMpUi();
+}
+function syncMpUi(){
+  const on = !!mp.active;
+  $('#fAgain').hidden = $('#fNext').hidden = $('#fMenu').hidden = $('#fReplay').hidden = on;
+  $('#fMpLobby').hidden = !(on && mpIsHost()); $('#fMpLeave').hidden = !on;
+  $('#pRestart').hidden = $('#pMenu').hidden = on; $('#pMpLeave').hidden = !on; $('#pMpLobby').hidden = !(on && mpIsHost());
+  $('#mpPos').hidden = !on; $('#fMp').hidden = !on;
+  if (!on) $('#mpCount').hidden = true;
+}
+// position in the race: finished players by time, then whoever is furthest along
+function mpStandings(){
+  return Object.entries(mp.players).filter(([, v]) => v.round === mp.round)
+    .sort((a, b) => (a[1].fin && b[1].fin) ? a[1].fin - b[1].fin : a[1].fin ? -1 : b[1].fin ? 1 : (b[1].q || 0) - (a[1].q || 0));
+}
+function mpRenderResults(){
+  if (!mp.active) return;
+  const st = mpStandings(), me = myUid();
+  $('#fMp').innerHTML = '<ol>' + st.map(([uid, v], i) => `<li class="${uid === me ? 'me' : ''}"><em>${i + 1}</em><span>${esc(v.name || 'Racer')}${v.adm ? ' (admin)' : ''}</span><b>${v.fin ? fmt(v.fin/1000) : 'racing…'}</b></li>`).join('') + '</ol>';
+  const i = st.findIndex(([uid]) => uid === me);
+  $('#mpPos').textContent = `P${i + 1} / ${st.length}`;
+}
+// remote cars: smooth movement toward the latest reported position, with a name tag
+function nameTag(text){
+  const cv = document.createElement('canvas'); cv.width = 256; cv.height = 64;
+  const g = cv.getContext('2d'); g.font = 'bold 34px "Chakra Petch", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.lineWidth = 7; g.strokeStyle = 'rgba(10,16,32,.85)'; g.strokeText(text, 128, 32); g.fillStyle = '#fff'; g.fillText(text, 128, 32);
+  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map:new THREE.CanvasTexture(cv), depthTest:false, transparent:true }));
+  sp.scale.set(4.4, 1.1, 1); sp.position.y = 3.4; sp.renderOrder = 10; return sp;
+}
+function mpClearCars(){ for (const id in mp.cars){ scene.remove(mp.cars[id].m.root); delete mp.cars[id]; } }
+function mpFrame(dt){
+  if (!mp.active) return;
+  const now = mpNow();
+  if (race.state === 'ready'){
+    const left = Math.ceil((mp.startAt - now)/1000), el = $('#mpCount');
+    if (left > 0 && left <= 5){ el.hidden = false; if (left !== mp.lastCount){ mp.lastCount = left; el.textContent = left; blip([660], .08); } }
+    else el.hidden = left > 5;
+  } else $('#mpCount').hidden = true;
+  if ((race.state === 'racing' || race.state === 'finished') && (mp.sendT -= dt) <= 0){
+    mp.sendT = 0.1;
+    const r2 = v => Math.round(v*100)/100;
+    mp.F.db.update(mpRef(`rooms/${mp.code}/players/${myUid()}`), { p:[r2(car.x), r2(car.y), r2(car.z), r2(car.h), r2(car.pitch || 0)], q:race.nextCp*100000 + Math.floor(car.idx || 0), adm:race.cheated ? 1 : 0 }).catch(() => {});
+  }
+  const me = myUid(), k = 1 - Math.exp(-dt*12);
+  for (const [uid, v] of Object.entries(mp.players)){
+    if (uid === me || v.round !== mp.round || !Array.isArray(v.p)) continue;
+    let c = mp.cars[uid];
+    if (!c){
+      const m = makeCar(new THREE.Color(/^#[0-9a-f]{6}$/i.test(v.col) ? v.col : '#888888').getHex());
+      for (const id in m.shells) m.shells[id].visible = id === (BODIES[v.body] ? v.body : 'b_rally');
+      m.root.add(nameTag(v.name || 'Racer')); scene.add(m.root);
+      c = mp.cars[uid] = { m, x:v.p[0], y:v.p[1], z:v.p[2], h:v.p[3], pt:v.p[4] };
+    }
+    const [x, y, z, h, pt] = v.p;
+    if (Math.hypot(c.x - x, c.z - z) > 40){ c.x = x; c.y = y; c.z = z; c.h = h; }
+    c.x += (x - c.x)*k; c.y += (y - c.y)*k; c.z += (z - c.z)*k; c.pt += (pt - c.pt)*k;
+    let dh = h - c.h; while (dh > Math.PI) dh -= 2*Math.PI; while (dh < -Math.PI) dh += 2*Math.PI; c.h += dh*k;
+    c.m.root.position.set(c.x, c.y, c.z); c.m.root.rotation.y = c.h; c.m.body.rotation.set(c.pt, 0, 0, 'YXZ');
+    c.m.wheels.forEach(w => { w.rotation.x += dt*20; });
+  }
+  for (const uid in mp.cars){ const v = mp.players[uid]; if (!v || v.round !== mp.round){ scene.remove(mp.cars[uid].m.root); delete mp.cars[uid]; } }
+  if ((mp.resT = (mp.resT || 0) - dt) <= 0){ mp.resT = .25; mpRenderResults(); }
+  ghostM.root.visible = false;
+}
+function mpFinished(t){
+  if (!mp.active) return;
+  mp.F.db.update(mpRef(`rooms/${mp.code}/players/${myUid()}`), { fin:Math.round(t*1000), q:1e9 }).catch(() => {});
+}
+$('#mpNameSave').addEventListener('click', () => { const v = cleanName($('#mpName').value); if (v.length < 2){ mpSetMsg('Use 2 to 16 letters, numbers or spaces.'); return; } lbName = v; store.set('facet.lbName', v); mpSetMsg('Name saved.'); });
+$('#mpCreate').addEventListener('click', () => mpCreate(true));
+$('#mpCreatePriv').addEventListener('click', () => mpCreate(false));
+$('#mpJoin').addEventListener('click', () => mpJoin($('#mpCode').value));
+$('#mpCode').addEventListener('keydown', e => { if (e.key === 'Enter') mpJoin($('#mpCode').value); });
+$('#mpLeave').addEventListener('click', () => mpLeave());
+$('#fMpLeave').addEventListener('click', () => mpLeave());
+$('#pMpLeave').addEventListener('click', () => mpLeave());
+$('#fMpLobby').addEventListener('click', () => mpSetMeta({ state:'lobby' }));
+$('#pMpLobby').addEventListener('click', () => mpSetMeta({ state:'lobby' }));
+$('#mpCopy').addEventListener('click', () => { const link = SITE + '?room=' + mp.code; (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(() => toast('Invite link copied')).catch(() => toast('Room code: ' + mp.code)); });
+$('#mpTrack').addEventListener('change', e => mpSetMeta({ track:e.target.value }));
+$('#mpWx').addEventListener('click', e => { const b = e.target.closest('button'); if (b) mpSetMeta({ wx:b.dataset.v }); });
+$('#mpStart').addEventListener('click', () => { if (!mpIsHost()) return; mpSetMeta({ state:'race', round:(mp.meta.round || 0) + 1, startAt:mpNow() + 5000, wx:mp.meta.wx || 'clear' }); });
+// opening an invite link joins the room
+if (/[?&]room=([A-Za-z]{4})/.test(location.search)) setTimeout(() => { showScreen('multi'); if (lbName) mpJoin(RegExp.$1); else { mpRenderHome(); mpSetMsg('Pick a racing name, then tap Join.'); $('#mpCode').value = RegExp.$1.toUpperCase(); } }, 800);
 
 /* ---------------- challenges screen ---------------- */
 function renderChallenges(){
@@ -4604,10 +5078,11 @@ function renderEdList(){
     const d = customDef(t), best = store.get('facet.best.' + d.id);
     const row = document.createElement('div'); row.className = 'myrow';
     row.innerHTML = `<div><b>${esc(t.name)}${t.uid === edUid ? ' <small>(editing)</small>' : ''}</b><small>${t.pieces.length} pieces · ${THEMES[t.theme].name} · ${best ? 'best ' + fmt(best.t) : 'no time yet'}</small></div>` +
-                    `<div class="acts"><button class="mini go2" data-a="play">Race</button><button class="mini" data-a="edit">Edit</button><button class="mini" data-a="del" aria-label="Delete ${esc(t.name)}">Delete</button></div>`;
+                    `<div class="acts"><button class="mini go2" data-a="play">Race</button><button class="mini" data-a="share">${t.shared ? 'Shared ✓' : 'Share'}</button><button class="mini" data-a="edit">Edit</button><button class="mini" data-a="del" aria-label="Delete ${esc(t.name)}">Delete</button></div>`;
     row.addEventListener('click', e => {
       const a = e.target.closest('[data-a]'); if (!a) return;
       if (a.dataset.a === 'play'){ initAudio(); fromEditor = true; loadDef(d); resetRun(); }
+      if (a.dataset.a === 'share') shareTrack(t);
       if (a.dataset.a === 'edit'){ ed = { name:t.name, theme:t.theme, width:t.width, pieces:t.pieces.slice() }; edUid = t.uid; edDraft(); $('#edName').value = ed.name; $('#edTheme').value = ed.theme; $('#edWidth').value = String(ed.width); drawEditor(); renderEdList(); }
       if (a.dataset.a === 'del') confirmBox('Delete this track?', `"${t.name}" will be removed from My tracks.`, 'Delete', () => { customTracks = customTracks.filter(x => x.uid !== t.uid); if (edUid === t.uid) edUid = null; saveCustom(); renderEdList(); });
     });
@@ -4748,6 +5223,10 @@ const GUIDE = [
   ['Free Roam and tricks', `<p><b>Free Roam</b> is an open park with no clock. Drive anywhere, hit the loops, ramps, halfpipe, crater and bounce pads, and hunt for the 20 stars (all 20 pay 100 coins once a day).</p>
     <ul><li><b>Spins:</b> steer LEFT or RIGHT in the air.</li><li><b>Backflips:</b> hold BACK in the air, and let go when the car is upright again, or you'll wipe out.</li>
     <li><b>Loops:</b> drive in from either end, straight or at an angle, at 86 km/h or more. Slower and you'll roll back out.</li><li>Combos (a flip plus a spin) score 1.5 times the points.</li></ul>`],
+  ['Playing online', `<ul><li><b>Leaderboards:</b> pick a racing name and every new best time posts to the world leaderboard for that track (times set with admin settings on stay offline).</li>
+    <li><b>Multiplayer:</b> create a room and share its 4-letter code or invite link, or join an open room. The host picks the track and weather and starts the race. Up to 8 players.</li>
+    <li><b>Track gallery:</b> share a custom track from My tracks, then race, like or copy tracks other players shared.</li>
+    <li><b>Google sign-in</b> (in Save &amp; load) saves your progress to your account so it follows you to other devices.</li></ul>`],
   ['Saving your progress', `<p>Progress is kept in this browser. Clearing browser data, private browsing or switching devices loses it, so use <b>Save & load</b> to download a save file now and then. Upload it later to carry on. A save code (text) works too, but it leaves out ghost replays.</p>`],
   ['Tips for faster times', `<ul><li>Learn where to brake. Braking a little earlier often gives a faster exit.</li>
     <li>Take the inside of long bends and let the car run wide on the way out.</li>
@@ -4760,7 +5239,20 @@ function renderGuide(){
 }
 
 /* ---------------- news ---------------- */
-const NEWS = [{ id:'1.6', title:'Update 1.6: Online leaderboards', date:'2026-11-06', body:`
+const NEWS = [{ id:'1.7', title:'Update 1.7: Multiplayer, Google sign-in and the Track gallery', date:'2026-11-06', body:`
+  <p>Facet Rally goes properly online.</p>
+  <h4>Live multiplayer</h4>
+  <p>Open <b>Multiplayer</b> and create a room. Send friends the 4-letter code or the invite link, or let anyone join from the Open rooms list (choose Private room to keep it to people with the code). Up to 8 racers share a track. The host picks the track and the weather and starts the race. Everyone gets the same countdown, you see each other's cars live with name tags, a chip shows your position, and the finish screen shows the results as people cross the line. If the host leaves, someone else takes over.</p>
+  <h4>Sign in with Google</h4>
+  <p>In <b>Save &amp; load</b>, sign in with Google and your progress saves to your account automatically: coins, cars, best times, career, custom tracks and settings. Sign in on another device and you can pick it all up there. Your leaderboard times come with you too.</p>
+  <h4>Track gallery</h4>
+  <p>Share your custom tracks with everyone: open <b>Custom tracks</b> and tap <b>Share</b> next to a track in My tracks. The new <b>Track gallery</b> lists tracks from all players, newest, most played or most liked. Race any of them, give it a like, or save a copy to edit yourself. You can remove your own tracks from the gallery at any time.</p>
+  <h4>Good to know</h4>
+  <ul>
+    <li>Cars in multiplayer pass through each other. There's no bumping.</li>
+    <li>Multiplayer, the gallery and sign-in need an internet connection and work on the Facet Rally website.</li>
+  </ul>`},
+  { id:'1.6', title:'Update 1.6: Online leaderboards', date:'2026-11-06', body:`
   <p>Facet Rally now has real online leaderboards, and its own website: <b>cooperriftx.github.io/facet-rally</b>.</p>
   <h4>Race the world</h4>
   <p>Open <b>Leaderboards</b> and pick a racing name (no account or sign-up needed). From then on, every new best time you set on a track goes online, and the finish screen shows your world rank. Tap any track in Leaderboards to see its top 10 and where you stand.</p>
@@ -4881,10 +5373,12 @@ $('#nEditor').addEventListener('click', openEditor);
 $('#nLb').addEventListener('click', () => { renderLeaderboard(); showScreen('lb'); });
 $('#nSave').addEventListener('click', () => { $('#svStatus').textContent = ''; showScreen('save'); });
 $('#nSet').addEventListener('click', () => showScreen('settings'));
-$('#nMulti').addEventListener('click', () => showScreen('multi'));
+$('#nMulti').addEventListener('click', () => { showScreen('multi'); mpRenderHome(); });
+$('#nGallery').addEventListener('click', () => { showScreen('gallery'); renderGallery(); });
 const openCareer = () => { renderCareer(); showScreen('career'); };
 $('#nCareer').addEventListener('click', openCareer);
 $('#lvlChip').addEventListener('click', openCareer);
+$('#nSave').addEventListener('click', () => renderAcct());
 $('#nNews').addEventListener('click', () => { renderNews(); showScreen('news'); store.set('facet.newsRead', NEWS[0].id); renderNewsBadge(); });
 $('#nHow').addEventListener('click', () => { renderGuide(); showScreen('howto'); });
 $('#hSchool').addEventListener('click', startSchool);
@@ -5128,6 +5622,7 @@ function frame(now){
   updateGhost(vdt);
   updateParticles(vdt);
   updateWeather(vdt);
+  mpFrame(dt);
   updateCamera(dt);
   updateSpeedLines(vdt);
   updateHud(dt);
@@ -5158,7 +5653,7 @@ showScreen('menu');
 if (!store.get('facet.tut.game')) openOverlay('welcome');
 renderNewsBadge();
 requestAnimationFrame(frame);
-window.__facet = { nag, renderer, B, prepDef, MEDAL_REF, applyCosmetics, career, setWeather, chalEvent, race, car, get track(){ return T; }, inp, TRACKS, admin, buildTrack, sampleTrack, findOverlaps, loadTrack, loadDef, customDef, ghostM, query, profile, get chal(){ return chal; }, get ghost(){ return ghost; } };
+window.__facet = { nag, renderer, mp, mpNow, fbLoad, googleAttach, cloud, B, prepDef, MEDAL_REF, applyCosmetics, career, setWeather, chalEvent, race, car, get track(){ return T; }, inp, TRACKS, admin, buildTrack, sampleTrack, findOverlaps, loadTrack, loadDef, customDef, ghostM, query, profile, get chal(){ return chal; }, get ghost(){ return ghost; } };
 })();
 </script>
 </body>
