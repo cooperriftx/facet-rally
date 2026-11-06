@@ -169,6 +169,27 @@ kbd{font:600 12px/1 'Chakra Petch',monospace;background:#fff;border:1px solid va
 .mpres li{display:grid;grid-template-columns:30px 1fr auto;gap:8px;padding:6px 10px;border-radius:8px;background:var(--card);font-variant-numeric:tabular-nums}
 .mpres li.me{background:#fff3c4;font-weight:700}
 .mpres ol{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.annbar{display:flex;gap:10px;align-items:flex-start;background:#1f7bff;color:#fff;border-radius:12px;padding:10px 12px;font-weight:600;font-size:14.5px;line-height:1.4}
+.annbar b{flex:1}.annbar button{border:0;background:rgba(255,255,255,.2);color:#fff;border-radius:8px;min-width:32px;min-height:32px;font-weight:800}
+.evchip{display:inline-flex;gap:6px;align-items:center;background:#ffe9a8;color:#7a5200;border-radius:999px;padding:5px 12px;font-weight:800;font-size:13px}
+.pill.feat{background:#f5b50a;color:#3a2800}
+.astat{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.astat div{background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px}.astat b{display:block;font-size:20px;color:#fff}.astat small{color:#97a3bf;font-weight:600;font-size:12px}
+.abars{display:grid;gap:4px}
+.abars .r{display:grid;grid-template-columns:110px 1fr 54px;gap:8px;align-items:center;font-size:12.5px;color:#cfd6e6}
+.abars .r i{display:block;height:10px;border-radius:5px;background:#ffd21f;min-width:2px}
+.abars .r span{text-align:right;font-variant-numeric:tabular-nums;color:#fff;font-weight:700}
+.alist{display:grid;gap:6px}
+.alist .it{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;background:rgba(255,255,255,.06);border-radius:10px;padding:8px 10px;font-size:13.5px}
+.alist .it small{display:block;color:#97a3bf}
+.alist .it .b{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.alist .it button,.arow2 button{border:1.5px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);color:#fff;border-radius:8px;min-height:34px;padding:0 10px;font-weight:700;font-size:12.5px}
+.alist .it button.danger{border-color:rgba(255,90,90,.5);color:#ff9c9c}
+.arow2{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:6px 0}
+.arow2 input,.arow2 select,.arow2 textarea{font:600 14px 'Chakra Petch',system-ui,sans-serif;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.16);color:#fff;border-radius:8px;min-height:36px;padding:4px 10px}
+.arow2 textarea{width:100%;min-height:60px;box-sizing:border-box}
+.arow2 select option{color:#131d33}
+.lbboard li button{border:0;background:transparent;color:var(--muted);font-weight:700;font-size:12px;cursor:pointer}
 .fonline{margin:0;font-weight:700;font-size:14px;color:#1b3d8f;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap}
 .fonline button{min-height:34px}
 .soon{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7a5200;background:#fff3c4;border-radius:6px;padding:4px 8px;white-space:nowrap}
@@ -195,6 +216,23 @@ kbd{font:600 12px/1 'Chakra Petch',monospace;background:#fff;border:1px solid va
 .item .price{display:inline-flex;align-items:center;gap:4px;font-size:13px;font-weight:700;color:#7a5200}
 .item .state{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
 .item.eq{border-color:var(--accent);background:#fff}
+.item{position:relative}
+.item .rar{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.item.r-common .rar{color:#7d889c}.item.r-rare .rar{color:#1f7bff}.item.r-epic .rar{color:#8a4dff}.item.r-legendary .rar{color:#c98a00}
+.item.r-rare{box-shadow:inset 0 -3px 0 #1f7bff}.item.r-epic{box-shadow:inset 0 -3px 0 #8a4dff}.item.r-legendary{box-shadow:inset 0 -3px 0 #f5b50a;background:linear-gradient(#fffaf0,var(--card))}
+.item .sale{position:absolute;top:6px;right:6px;background:#e5484d;color:#fff;font-size:11px;font-weight:800;border-radius:6px;padding:2px 6px}
+.item .price s{opacity:.55;font-weight:600}
+.coins.gems{background:#f1ebff;border-color:#c9b3ff;color:#4b1fa8}
+.shopv{display:grid;gap:12px}
+.shopv h3{margin:6px 0 0;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.shopv .sh{display:flex;justify-content:space-between;align-items:baseline;gap:8px}.shopv .sh small{color:var(--muted);font-weight:700}
+.bundle,.crate{display:grid;gap:8px;background:var(--card);border-radius:14px;padding:12px}
+.bundle .row,.crate .row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.bundle .icons{display:flex;gap:4px;flex-wrap:wrap}.bundle .icons .sw{width:30px;height:30px;border-radius:50%;box-shadow:inset 0 0 0 2px rgba(19,29,51,.12);display:grid;place-items:center}
+.bundle .icons .sw svg{width:18px;height:18px}.bundle .icons .sw.own{opacity:.35}
+.bundle small,.crate small{color:var(--muted);font-weight:600}
+.odds{display:flex;gap:6px;flex-wrap:wrap}.odds span{font-size:12px;font-weight:800;border-radius:6px;padding:3px 7px;background:#eef1f7}
+.odds .rare{color:#1f7bff}.odds .epic{color:#8a4dff}.odds .legendary{color:#c98a00}
 .item.eq .state{color:var(--accent)}
 .item.confirm{border-color:var(--coin);background:#fff8e0}
 .item.sel{border-color:var(--ink);background:#fff}
@@ -318,6 +356,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
   background:rgba(250,252,255,.95);color:var(--ink);border-radius:14px;padding:10px 16px;display:grid;gap:4px;text-align:center;box-shadow:0 8px 30px rgba(16,26,48,.3);border-bottom:4px solid var(--accent)}
 .coach small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700}
 .coach b{font-size:17px;line-height:1.35}
+.coachskip{pointer-events:auto;justify-self:end;border:0;background:rgba(19,29,51,.08);color:var(--ink);border-radius:9px;min-height:36px;padding:0 12px;font-weight:700;font-size:13px;margin-top:2px}
 .coach.pop{animation:mpop .4s cubic-bezier(.2,1.6,.4,1)}
 .guide{display:grid;gap:8px}
 .guide details{background:var(--card);border-radius:12px;padding:0 14px;border:2px solid transparent}
@@ -343,6 +382,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
 
 /* pop-ups always sit above full screens such as Pause and Finish */
 #lock,#admin,#paste,#copyBox,#confirm,#tut,#welcome,#saveNag{z-index:10}
+#confirm{z-index:12}
 .steps{margin:0;padding-left:22px;display:grid;gap:6px;text-align:left}
 .steps li{font-size:15px;line-height:1.5;color:#34405a}
 .steps b{color:var(--ink)}
@@ -506,7 +546,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
       </button>
     </div>
     <div class="hint" id="hint" hidden></div>
-    <div class="coach" id="coach" hidden><small id="coachStep"></small><b id="coachText"></b><div class="dots" id="coachDots"></div></div>
+    <div class="coach" id="coach" hidden><small id="coachStep"></small><b id="coachText"></b><div class="dots" id="coachDots"></div><button class="coachskip" id="coachSkip">Skip tutorial</button></div>
     <div class="flash" id="flash"></div>
     <div class="rpkeys" id="rpKeys" hidden aria-label="Buttons held"><i data-b="1">▲</i><i data-b="2">▼</i><i data-b="4">◀</i><i data-b="8">▶</i><i data-b="16" class="w">DRIFT</i></div>
     <div class="rpbar" id="rpBar" hidden>
@@ -544,8 +584,10 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
     <div class="panel wide">
       <header class="brand">
         <h1>Facet <span>Rally</span></h1>
-        <div class="chips"><button class="lvl" id="lvlChip" title="Career and achievements"></button><div class="coins" id="coinChip" title="Coins"></div></div>
+        <div class="chips"><button class="lvl" id="lvlChip" title="Career and achievements"></button><div class="coins" id="coinChip" title="Coins"></div><div class="coins gems" id="gemChip" title="Gems"></div></div>
       </header>
+      <div class="annbar" id="annBar" hidden><b id="annText"></b><button id="annX" aria-label="Dismiss">✕</button></div>
+      <div id="evChips" hidden></div>
       <nav class="tiles" aria-label="Game menu">
         <button class="tile" id="nChal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4.5" width="17" height="16" rx="2"/><path d="M3.5 9.5h17M8 2.5v4M16 2.5v4m-7.5 8 2.2 2.2 4.3-4.4"/></svg>Daily challenges<small id="chalSum"></small></button>
         <button class="tile" id="nGarage"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15.5 5 10a2 2 0 0 1 1.9-1.4h10.2A2 2 0 0 1 19 10l2 5.5V19H3z"/><circle cx="7.5" cy="16" r="1.3"/><circle cx="16.5" cy="16" r="1.3"/></svg>Garage<small>Car bodies, paint and more</small></button>
@@ -631,7 +673,7 @@ textarea.txt{min-height:110px;font:500 13px/1.4 ui-monospace,Menlo,monospace;res
   <!-- garage -->
   <section id="garage" class="screen left" hidden>
     <div class="panel wide" style="width:min(560px,100%)">
-      <div class="subhead" style="justify-content:space-between"><div class="subhead"><button class="back" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><h2>Garage</h2></div><div class="coins" id="coinChip2"></div></div>
+      <div class="subhead" style="justify-content:space-between"><div class="subhead"><button class="back" data-back aria-label="Back"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button><h2>Garage</h2></div><div class="chips"><div class="coins" id="coinChip2"></div><div class="coins gems" id="gemChip2"></div></div></div>
       <div class="cats" id="gCats"></div>
       <div class="gsel" id="gSel" hidden></div>
       <div class="items" id="gItems"></div>
@@ -2149,7 +2191,14 @@ const SHOP = [
     ['v_mint','Mint','#6ee7b7',150],['v_candy','Candy','#ff8fd1',150],['v_ocean','Ocean','#1f7bff',160],['v_sunset','Sunset','#ff7a3d',160],['v_galaxy','Galaxy','galaxy',220],['v_mono','Black & white','#262d3d',140]] }
 ];
 const ITEM = {};
-SHOP.forEach(c => c.items.forEach(([id, name, color, price, em]) => { ITEM[id] = { id, name, color, price, em:em || 0, cat:c.key }; }));
+// rarity follows the original price; Legendary cosmetics are bought with gems
+const rarityOf = (base, cat) => cat === 'body' ? (base ? 'epic' : 'common') : base <= 90 ? 'common' : base <= 180 ? 'rare' : base <= 300 ? 'epic' : 'legendary';
+SHOP.forEach(c => c.items.forEach(([id, name, color, price, em]) => {
+  const rarity = rarityOf(price, c.key);
+  ITEM[id] = { id, name, color, base:price, price: price ? Math.round(price*1.15/5)*5 : 0, em:em || 0, cat:c.key, rarity, gems: rarity === 'legendary' && price ? Math.round(price/40) : 0 };
+}));
+const RARITY = { common:['Common','#7d889c'], rare:['Rare','#1f7bff'], epic:['Epic','#8a4dff'], legendary:['Legendary','#c98a00'] };
+const GEM = '<svg class="coin" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12l4 6-10 12L2 9z" fill="#8a4dff" stroke="#4b1fa8" stroke-width="1.6" stroke-linejoin="round"/><path d="M2 9h20M9 3 7 9l5 12 5-12-2-6" fill="none" stroke="#d9c9ff" stroke-width="1.2"/></svg>';
 // car bodies: how each one looks (wheel spots, where cosmetics sit) and how it drives.
 // Handling numbers multiply the normal car's; `ratings` are the 1–5 bars shown in the Garage.
 const BODIES = {
@@ -2182,7 +2231,7 @@ const baseCol = c => ANIMC[c] ? ANIMC[c][0] : c;
 const cycleCol = (cols, t) => { const n = cols.length, k = ((t % n) + n) % n, i = Math.floor(k); return '#' + new THREE.Color(cols[i]).lerp(new THREE.Color(cols[(i+1) % n]), k - i).getHexString(); };
 const profile = (() => {
   const p = store.get('facet.profile') || {};
-  const out = { coins: Math.max(0, Math.floor(+p.coins || 0)), owned: Array.isArray(p.owned) ? p.owned.filter(id => ITEM[id]) : [], equipped: Object.assign({}, DEFAULT_EQ) };
+  const out = { coins: Math.max(0, Math.floor(+p.coins || 0)), gems: Math.max(0, Math.floor(+p.gems || 0)), owned: Array.isArray(p.owned) ? p.owned.filter(id => ITEM[id]) : [], equipped: Object.assign({}, DEFAULT_EQ) };
   for (const k in DEFAULT_EQ) if (p.equipped && ITEM[p.equipped[k]] && ITEM[p.equipped[k]].cat === k) out.equipped[k] = p.equipped[k];
   const oldPaint = store.get('facet.paint');   // carry over the paint picked in earlier versions
   if (!p.equipped && oldPaint){ const m = Object.values(ITEM).find(i => i.color === oldPaint && i.cat === 'paint'); if (m) out.equipped.paint = m.id; }
@@ -2193,8 +2242,10 @@ const owns = id => ITEM[id] && (ITEM[id].price === 0 || profile.owned.includes(i
 let preview = null;
 const curEq = () => preview ? Object.assign({}, profile.equipped, { [preview.cat]: preview.id }) : profile.equipped;
 const saveProfile = () => { store.set('facet.profile', profile); renderCoins(); };
-function addCoins(n){ profile.coins = Math.max(0, profile.coins + n); saveProfile(); }
-function renderCoins(){ const html = COIN + ' ' + profile.coins.toLocaleString(); $('#coinChip').innerHTML = html; $('#coinChip2').innerHTML = html; }
+function addCoins(n, exact){ if (n > 0 && liveCfg.doubleCoins && !exact) n *= 2; profile.coins = Math.max(0, profile.coins + n); saveProfile(); }
+function addGems(n){ profile.gems = Math.max(0, (profile.gems || 0) + n); saveProfile(); }
+let liveCfg = {};
+function renderCoins(){ const html = COIN + ' ' + profile.coins.toLocaleString(), gh = GEM + ' ' + (profile.gems || 0).toLocaleString(); $('#coinChip').innerHTML = html; $('#coinChip2').innerHTML = html; $('#gemChip').innerHTML = gh; $('#gemChip2').innerHTML = gh; }
 
 /* decal textures */
 const roundel = n => canvasTex(128, 128, (g) => {
@@ -2681,7 +2732,7 @@ let camMode = store.get('facet.cam') || 0, camYaw = 0, shake = 0, menuAng = 0;
 const ADMIN_DEFAULTS = { speed:1, accel:1, steer:1, brake:1, grip:'normal', grav:1, jump:1, air:1, nitro:0, pads:'normal', rails:0, grass:1, autoResp:0, clock:1, slowmo:1, auto:0,
                          size:1, rainbow:0, glow:0, confetti:0, lines:'auto', fps:0, fovAdd:0, hudBtn:0 };
 const admin = Object.assign({}, ADMIN_DEFAULTS, store.get('facet.admin') || {});
-const ADMIN_HASH = 3762453423;   // FNV-1a of the password; the game compares hashes, not the password text
+const ADMIN_HASH = 3865687505;   // FNV-1a of the password; the game compares hashes, not the password text
 let adminUnlocked = session.get('facet.adminOk') === '1';
 const GAMEPLAY_KEYS = ['speed','accel','steer','brake','grip','grav','jump','air','nitro','pads','rails','grass','autoResp','clock','slowmo','auto'];
 const cheatsOn = () => GAMEPLAY_KEYS.some(k => admin[k] !== ADMIN_DEFAULTS[k]);
@@ -2735,6 +2786,7 @@ const ADMIN_TABS = [
       ['fps', 'FPS counter', '', ON_OFF]
     ]]
   ]],
+  ['online', 'Online', null],
   ['tools', 'Tools', null]
 ];
 const ADMIN_PRESETS = [
@@ -2796,11 +2848,11 @@ function makeChallenges(key){
     { type:'jumps', goal:15, text:'Land 15 jumps' },
     { type:'dist', goal:15000, text:'Drive 15 km' },
     { type:'golds', goal:3, text:'Earn gold medals on 3 different tracks' } ]);
-  s1.reward = 40; s2.reward = 70; s4.reward = 90; s3.reward = 120; s5.reward = 160;
+  s1.reward = 35; s2.reward = 60; s4.reward = 75; s3.reward = 100; s5.reward = 135;
   return { key, list:[s1, s2, s4, s3, s5].map(c => Object.assign(c, { prog:0, done:false, seen:[] })) };
 }
 let chal = store.get('facet.chal');
-const CHAL_N = 5, CHAL_BONUS = 100;
+const CHAL_N = 5, CHAL_BONUS = 85;
 function ensureChallenges(){
   const k = todayKey();
   if (!chal || chal.key !== k || !Array.isArray(chal.list) || chal.list.length !== CHAL_N){
@@ -2839,7 +2891,7 @@ function chalEvent(type, data = {}){
     if (c.prog >= c.goal){
       c.done = true; addCoins(c.reward); careerEvent('chal');
       toast(`Challenge complete: ${esc(c.text)} &nbsp;+${c.reward} ${COIN}`, true);
-      if (!chal.bonus && chal.list.every(x => x.done)){ chal.bonus = true; addCoins(CHAL_BONUS); setTimeout(() => toast(`All ${CHAL_N} daily challenges done! &nbsp;+${CHAL_BONUS} ${COIN} bonus`, true), 900); }
+      if (!chal.bonus && chal.list.every(x => x.done)){ chal.bonus = true; addCoins(CHAL_BONUS); addGems(2); setTimeout(() => toast(`All ${CHAL_N} daily challenges done! &nbsp;+${CHAL_BONUS} ${COIN} +2 ${GEM} bonus`, true), 900); }
       blip([988, 1319, 1760], .08, 'triangle', .1);
     }
   }
@@ -2923,22 +2975,25 @@ const ACH = [
   ['lvl10','career','Rising Star','Reach level 10',200,() => career.lvl,10],
   ['lvl25','career','Veteran','Reach level 25',500,() => career.lvl,25],
 ];
+ACH.forEach(a => { a[4] = Math.round(a[4]*.85/5)*5; });
+const achGems = a => Math.max(2, Math.round(a[4]/45));
 const TROPHY_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M17 5h3a3 3 0 0 1-3 4M7 5H4a3 3 0 0 0 3 4"/></svg>';
 const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
 function saveCareer(){ store.set('facet.career', { xp:career.xp, lvl:career.lvl, st:career.st, ach:career.ach }); }
 function gainXp(n){
+  if (liveCfg.doubleXp) n *= 2;
   career.xp += n;
   while (career.xp >= xpNeed(career.lvl)){
     career.xp -= xpNeed(career.lvl); career.lvl++;
-    const r = 25*career.lvl; addCoins(r);
-    toast(`Level ${career.lvl}! &nbsp;+${r} ${COIN}`, true); blip([784, 988, 1319, 1568], .09, 'triangle', .1);
+    const r = 21*career.lvl, gm = career.lvl % 5 === 0 ? 5 : 0; addCoins(r); if (gm) addGems(gm);
+    toast(`Level ${career.lvl}! &nbsp;+${r} ${COIN}${gm ? ` +${gm} ${GEM}` : ''}`, true); blip([784, 988, 1319, 1568], .09, 'triangle', .1);
   }
 }
 function checkAch(){
   for (const a of ACH){
     if (career.ach[a[0]] || a[5]() < a[6]) continue;
-    career.ach[a[0]] = Date.now(); addCoins(a[4]);
-    toast(`Achievement: <b>${esc(a[2])}</b> &nbsp;+${a[4]} ${COIN}`, true);
+    career.ach[a[0]] = Date.now(); addCoins(a[4]); addGems(achGems(a));
+    toast(`Achievement: <b>${esc(a[2])}</b> &nbsp;+${a[4]} ${COIN} +${achGems(a)} ${GEM}`, true);
   }
 }
 function careerEvent(type, d = {}){
@@ -2994,7 +3049,7 @@ function renderCareer(){
   const need = xpNeed(career.lvl), got = ACH.filter(a => career.ach[a[0]]).length;
   $('#carHead').innerHTML = `<div class="lvbig"><span><small>Level</small><b>${career.lvl}</b></span></div>
     <div class="t"><b>${Math.floor(career.xp).toLocaleString()} / ${need.toLocaleString()} XP to level ${career.lvl + 1}</b><div class="xpbar"><b style="width:${Math.min(100, career.xp/need*100)}%"></b></div>
-    <small>Next level pays ${(25*(career.lvl+1)).toLocaleString()} coins. Earn XP by finishing races (more for medals, new bests, clean runs and rain, snow, fog or night), daily challenges, tricks, loops and stars.${cheatsOn() ? ' Admin tools are on, so nothing counts right now.' : ''}</small></div>`;
+    <small>Next level pays ${(21*(career.lvl+1)).toLocaleString()} coins${(career.lvl+1) % 5 === 0 ? ' and 5 gems' : ''}. Earn XP by finishing races (more for medals, new bests, clean runs and rain, snow, fog or night), daily challenges, tricks, loops and stars.${cheatsOn() ? ' Admin tools are on, so nothing counts right now.' : ''}</small></div>`;
   const km = stN('dist')/1000;
   const stats = [['Races finished', stN('races')], ['Clean finishes', stN('clean')], ['Tracks finished', `${stL('tracks')}/${RACE_N}`], ['Gold medals', `${stL('golds')}/${MEDAL_N}`],
                  ['Checkpoints', stN('cps')], ['Boost pads', stN('boosts')], ['Big jumps', stN('jumps')], ['Drift boosts', stN('drifts')],
@@ -3005,7 +3060,7 @@ function renderCareer(){
     const rows = ACH.filter(a => a[1] === c).map(a => {
       const done = !!career.ach[a[0]], cur = Math.min(a[6], a[5]());
       const bar = !done && a[6] > 1 ? `<div class="pb"><i style="width:${(cur/a[6]*100).toFixed(1)}%"></i></div><small>${(a[6] >= 10 && a[0].startsWith('dist') ? cur.toFixed(1) : Math.floor(cur)).toLocaleString()} / ${a[6].toLocaleString()}</small>` : '';
-      return `<div class="ach${done ? ' done' : ''}">${done ? TROPHY_SVG : LOCK_SVG}<span class="t"><b>${esc(a[2])}</b><small>${esc(a[3])}</small>${bar}</span><em>${done ? 'Done' : '+' + a[4] + ' ' + COIN}</em></div>`;
+      return `<div class="ach${done ? ' done' : ''}">${done ? TROPHY_SVG : LOCK_SVG}<span class="t"><b>${esc(a[2])}</b><small>${esc(a[3])}</small>${bar}</span><em>${done ? 'Done' : '+' + a[4] + ' ' + COIN + ' +' + achGems(a) + ' ' + GEM}</em></div>`;
     }).join('');
     return `<h3 class="achcat">${label}</h3><div class="achs">${rows}</div>`;
   }).join('');
@@ -3083,7 +3138,7 @@ function ghostTimeAt(idx){
 
 function loadDef(def){
   if (T){ scene.remove(T.group); disposeTree(T.group); }
-  curId = def.id; if (!def.custom) store.set('facet.trackId', def.id);
+  curId = def.id; if (!def.custom && !def.school) store.set('facet.trackId', def.id);
   applyTheme(THEMES[def.theme]);
   T = buildTrack(def);
   scene.add(T.group);
@@ -3175,6 +3230,8 @@ function finishRun(){
   const mySplits = race.splits.slice();
   const fair = !race.cheated && !cheatsOn() && !T.def.custom && !school;
   if (isBest){ ghost = { v:2, t, splits: mySplits, f: race.rec.slice(), k: race.keys.slice(), fair }; store.set(key, ghost); prepGhost(); }
+  logEvent('finish', { id:T.def.id });
+  featuredBonus(T.def.id);
   onlineAfterFinish(T.def.id, t, isBest && fair);
   mpFinished(t);
   blip(isBest ? [660, 880, 1100, 1320] : [660, 880, 990], .1); vibrate(60);
@@ -3268,8 +3325,8 @@ function tick(){
   const live = race.state === 'ready' || race.state === 'racing';
   const mpWait = mp.active && race.state === 'ready';
   const gas = live && !mpWait && inp.gas, brake = live && !mpWait && inp.brake, steerT = live && !mpWait ? inp.steer : 0, hand = live && !mpWait && inp.drift;
-  if (mpWait && mpNow() >= mp.startAt){ race.state = 'racing'; race.time = Math.min(1, (mpNow() - mp.startAt)/1000); flash('GO!'); blip([1320], .12); }
-  else if (race.state === 'ready' && !mp.active && (gas || brake || steerT !== 0)){ race.state = 'racing'; flash('GO!'); blip([1320], .12); }
+  if (mpWait && mpNow() >= mp.startAt){ logEvent('race', { id:T.def.id, mp:1 }); race.state = 'racing'; race.time = Math.min(1, (mpNow() - mp.startAt)/1000); flash('GO!'); blip([1320], .12); }
+  else if (race.state === 'ready' && !mp.active && (gas || brake || steerT !== 0)){ logEvent('race', { id:T.def.id }); race.state = 'racing'; flash('GO!'); blip([1320], .12); }
   if (race.state === 'racing'){ race.time += DT*A.clock; if (cheatsOn()) race.cheated = true; }
   if (A.nitro && live && inp.nitro) c.boostT = Math.max(c.boostT, 0.15);
   if (c.loop){ rideLoop(c); return; }
@@ -3523,8 +3580,8 @@ function collectStar(st){
   careerEvent('star', { all: n === all });
   if (n < all){ popup(`★ ${n} / ${all}`); return; }
   const day = todayKey(), paid = store.get('facet.freeStarsDay') === day;
-  if (!paid){ store.set('facet.freeStarsDay', day); addCoins(100); }
-  toast(`All ${all} stars found!` + (paid ? '' : ` &nbsp;+100 ${COIN}`), true);
+  if (!paid){ store.set('facet.freeStarsDay', day); addCoins(85); }
+  toast(`All ${all} stars found!` + (paid ? '' : ` &nbsp;+85 ${COIN}`), true);
   confettiBurst(60);
 }
 
@@ -4014,6 +4071,7 @@ const currentScreen = () => screenNow;
 let screenAt = 0;
 function showScreen(id){
   if (id !== screenNow) screenAt = performance.now();
+  if (window.ANA) ANA.screen = id || 'race';
   screenNow = id;
   for (const s of SCREENS) if (!OVERLAYS.includes(s)) $('#'+s).hidden = s !== id;
   const inRace = race.state !== 'menu';
@@ -4236,7 +4294,8 @@ function renderAdmin(){
   }
   const body = $('#adminBody'); body.textContent = '';
   const tab = ADMIN_TABS.find(t => t[0] === adminTab) || ADMIN_TABS[0];
-  if (!tab[2]) renderAdminTools(body);
+  if (tab[0] === 'online') renderAdminOnline(body);
+  else if (!tab[2]) renderAdminTools(body);
   else for (const [title, rows] of tab[2]){
     const h = document.createElement('h3'); h.textContent = title; body.appendChild(h);
     for (const r of rows) body.appendChild(adminRow(...r));
@@ -4300,7 +4359,8 @@ FB.key = FB.apiKey; FB.project = FB.projectId;
 const EMU = (() => { try { return localStorage.getItem('facet.emu') === '1'; } catch(e){ return false; } })();
 const FS = EMU ? `http://127.0.0.1:8080/v1/projects/${FB.project}/databases/(default)/documents` : `https://firestore.googleapis.com/v1/projects/${FB.project}/databases/(default)/documents`;
 const FB_SDK = 'https://www.gstatic.com/firebasejs/10.12.2/';
-const SITE = 'https://cooperriftx.github.io/facet-rally/';
+const SITE = 'https://facet-rally-a449c.web.app/';
+const ONLINE_HOST = /^https?:$/.test(location.protocol) && !/claude|anthropic/.test(location.hostname);
 let lbName = store.get('facet.lbName') || '', fbMods = null, fbUser = null, fbFailed = false;
 const lbOpen = new Set(), lbCache = {};
 const cleanName = v => String(v || '').replace(/[^\w .\-]/g, '').replace(/\s+/g, ' ').trim().slice(0, 16);
@@ -4377,28 +4437,51 @@ async function onlineAfterFinish(track, t, post){
   if (cheatsOn() || race.cheated){ box.hidden = false; box.textContent = 'Admin settings on: this time stays offline.'; return; }
   if (!lbName){
     if (!post) return;
-    box.hidden = false; box.innerHTML = 'Post your times online? <button class="mini go2" id="fLbName">Pick a racing name</button>';
-    $('#fLbName').addEventListener('click', () => { renderLeaderboard(); showScreen('lb'); setTimeout(() => $('#lbName').focus(), 50); });
-    return;
+    setRacingName(autoName(), true);
+    toast(`You’re on the leaderboard as “${esc(lbName)}”. Change your name any time in Leaderboards.`);
   }
+  if (banned){ box.hidden = false; box.textContent = 'This account can’t post online times.'; return; }
   try {
     await lbSync();
     const mine = await lbMine(track); if (mine == null) return;
     const [ahead, total] = await Promise.all([lbCount(track, mine), lbCount(track)]);
     box.hidden = false;
     box.textContent = `${post ? 'Posted online! ' : ''}World rank #${ahead + 1} of ${total} on ${T.def.name}`;
-  } catch(e){ box.hidden = false; box.textContent = location.hostname.endsWith('github.io') ? 'Couldn’t reach the online leaderboard. Your time will post next time you’re online.' : 'Online leaderboards work on the Facet Rally website.'; }
+  } catch(e){ box.hidden = false; box.textContent = ONLINE_HOST ? 'Couldn’t reach the online leaderboard. Your time will post next time you’re online.' : 'Online leaderboards work on the Facet Rally website.'; }
 }
 function lbStatus(){
   const st = $('#lbStatus');
-  st.textContent = (lbName ? `Your new best times post online as “${lbName}”. Times set with admin settings on stay offline.` : 'Pick a name to put your best times on the online leaderboards. No account needed.') + (isGoogle() ? '' : ' Sign in with Google (in Save & load) to keep your times on every device.');
+  st.textContent = (banned ? 'This account can’t post online times. ' : '') + (lbName ? `Your new best times post online as “${lbName}”. Change it here any time and your old entries update too. Times set with admin settings on stay offline.` : 'Set a best time and you’ll go on the leaderboard automatically. Pick your own name here any time.') + (isGoogle() ? '' : ' Sign in with Google (in Save & load) to keep your times on every device.');
 }
 $('#lbNameSave').addEventListener('click', () => {
   const v = cleanName($('#lbName').value);
   if (v.length < 2){ $('#lbStatus').textContent = 'Use 2 to 16 letters, numbers or spaces.'; return; }
-  lbName = v; store.set('facet.lbName', v); $('#lbName').value = v; lbStatus();
+  setRacingName(v); $('#lbName').value = v; lbStatus();
   toast('Racing name saved'); lbSync().then(() => renderLeaderboard());
 });
+// a name picked automatically: the first name from Google, or "Racer" and four digits
+function autoName(){
+  if (isGoogle() && fbUser.displayName){ const f = cleanName(fbUser.displayName.split(' ')[0]); if (f.length >= 2) return f; }
+  let n = store.get('facet.autoNum'); if (!n){ n = 1000 + Math.floor(Math.random()*9000); store.set('facet.autoNum', n); }
+  return 'Racer ' + n;
+}
+function setRacingName(v, auto){
+  const changed = v !== lbName;
+  lbName = v; store.set('facet.lbName', v); store.set('facet.lbAuto', auto ? 1 : 0);
+  if (changed){ lbRenameAll().catch(() => {}); setTimeout(anaSend, 1500); }
+  logEvent('name');
+}
+// puts the new name on every leaderboard entry this player already has
+async function lbRenameAll(){
+  const a = await fbToken(), names = Object.keys(MEDAL_REF).map(t => `projects/${FB.project}/databases/(default)/documents/boards/${t}/times/${a.uid}`);
+  const r = await fetch(`${FS}:batchGet`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + a.id }, body:JSON.stringify({ documents:names }) });
+  if (!r.ok) return;
+  const have = (await r.json()).filter(x => x.found).map(x => x.found.name);
+  if (!have.length) return;
+  await fetch(`${FS}:commit`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + a.id },
+    body:JSON.stringify({ writes:have.map(n => ({ update:{ name:n, fields:{ name:{ stringValue:lbName } } }, updateMask:{ fieldPaths:['name'] } })) }) });
+  for (const k in lbCache) delete lbCache[k];
+}
 $('#lbName').addEventListener('keydown', e => { if (e.key === 'Enter') $('#lbNameSave').click(); });
 async function fillBoard(t, box){
   box.innerHTML = '<p>Loading…</p>';
@@ -4407,13 +4490,16 @@ async function fillBoard(t, box){
     lbCache[t.id] = { at:Date.now(), top };
     const me = myUid();
     if (!top.length){ box.innerHTML = '<p>No online times yet. Set one and be first!</p>'; return; }
-    box.innerHTML = '<ol>' + top.map((e, i) => `<li class="${e.uid === me ? 'me' : ''}"><em>${i + 1}</em><span>${esc(e.name)}${e.uid === me ? ' (you)' : ''}</span><b>${fmt(e.ms/1000)}</b></li>`).join('') + '</ol>';
+    box.innerHTML = '<ol>' + top.map((e, i) => `<li class="${e.uid === me ? 'me' : ''}"><em>${i + 1}</em><span>${esc(e.name)}${e.uid === me ? ' (you)' : ''}${e.uid !== me ? ` <button data-rep="${i}" title="Report this name">Report</button>` : ''}${isAdminUser ? ` <button data-del="${i}">Delete</button> <button data-ban="${i}">Ban</button>` : ''}</span><b>${fmt(e.ms/1000)}</b></li>`).join('') + '</ol>';
+    box.querySelectorAll('[data-rep]').forEach(b => b.onclick = ev => { ev.stopPropagation(); const e = top[+b.dataset.rep]; reportThing('name', `boards/${t.id}/times/${e.uid}`, e.uid, e.name); });
+    box.querySelectorAll('[data-del]').forEach(b => b.onclick = async ev => { ev.stopPropagation(); const e = top[+b.dataset.del]; if (await adminDelete(`boards/${t.id}/times/${e.uid}`)){ delete lbCache[t.id]; fillBoard(t, box); } });
+    box.querySelectorAll('[data-ban]').forEach(b => b.onclick = ev => { ev.stopPropagation(); const e = top[+b.dataset.ban]; adminBan(e.uid, e.name); });
     if (me && !top.some(e => e.uid === me)){
       const mine = await lbMine(t.id);
       if (mine != null){ const ahead = await lbCount(t.id, mine); box.insertAdjacentHTML('beforeend', `<p>You: #${ahead + 1} with ${fmt(mine/1000)}</p>`); }
     }
   } catch(e){
-    box.innerHTML = `<p>Couldn’t load the online leaderboard. ${location.hostname.endsWith('github.io') ? 'Check your internet connection and try again.' : `It works on the website: <a href="${SITE}" target="_blank" rel="noopener">${SITE}</a>`}</p>`;
+    box.innerHTML = `<p>Couldn’t load the online leaderboard. ${ONLINE_HOST ? 'Check your internet connection and try again.' : `It works on the website: <a href="${SITE}" target="_blank" rel="noopener">${SITE}</a>`}</p>`;
   }
 }
 function renderLeaderboard(){
@@ -4505,7 +4591,8 @@ async function googleAttach(F, link, signIn){
     else { toast('Sign-in failed: ' + esc(e.code || e.message)); return; }
   }
   fbUser = F.au.currentUser; await fbUser.getIdToken(true);
-  if (!lbName && fbUser.displayName){ lbName = cleanName(fbUser.displayName.split(' ')[0]); if (lbName.length >= 2) store.set('facet.lbName', lbName); else lbName = ''; }
+  if ((!lbName || store.get('facet.lbAuto')) && fbUser.displayName){ const f = cleanName(fbUser.displayName.split(' ')[0]); if (f.length >= 2) setRacingName(f, true); }
+  adminCheck();
   toast(`Signed in as ${esc(fbUser.displayName || fbUser.email)}`);
   lbSync(); cloudStart();
 }
@@ -4539,6 +4626,286 @@ addEventListener('visibilitychange', () => { if (document.hidden && cloud.on && 
 // load the sign-in code soon after start (sign-in pop-ups must open straight from a tap, so it has to be ready first)
 setTimeout(() => { fbLoad().then(() => { if (isGoogle()) cloudStart(); }).catch(() => {}); }, 2500);
 
+/* ---------------- play statistics ----------------
+   Each visit is a session document (sessions/<id>): how long the game was open and visible, races, finishes,
+   tracks, and the last screen seen (where the player left). Each player has one document (players/<uid>) with
+   totals and the first time they reached each step of the new-player funnel. Only the admin can read either. */
+const DEVICE = /iPad/.test(navigator.userAgent) || (/Macintosh/.test(navigator.userAgent) && navigator.maxTouchPoints > 1) ? 'ipad'
+             : /iPhone|Android.*Mobile|Mobile/.test(navigator.userAgent) ? 'phone' : /Android|Tablet/.test(navigator.userAgent) ? 'tablet' : 'computer';
+const dayStr = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+const rid = n => Array.from(crypto.getRandomValues(new Uint8Array(n)), x => 'abcdefghijklmnopqrstuvwxyz0123456789'[x % 36]).join('');
+var ANA = { sid:rid(16), created:false, active:0, sent:0, races:0, fins:0, sentR:0, sentF:0, tr:{}, fn:{}, screen:'menu', ms:{} };
+window.ANA = ANA;
+function logEvent(type, d = {}){
+  const ms = store.get('facet.ms') || {}, mark = k => { if (!ms[k]){ ms[k] = Date.now(); ANA.ms[k] = 1; } };
+  if (type === 'race'){ ANA.races++; ANA.tr[d.id] = (ANA.tr[d.id] || 0) + 1; mark('race1'); const n = (store.get('facet.raceCount') || 0) + 1; store.set('facet.raceCount', n); if (n >= 3) mark('races3'); if (d.mp) mark('mp1'); }
+  if (type === 'finish'){ ANA.fins++; ANA.fn[d.id] = (ANA.fn[d.id] || 0) + 1; mark('finish1'); }
+  if (/^tutorial_/.test(type)) mark(type);
+  if (['share','name','buy','crate','bundle'].includes(type)) mark(type);
+  store.set('facet.ms', ms);
+}
+setInterval(() => { if (!document.hidden) ANA.active++; }, 1000);
+const tsNow = () => ({ fieldPath:'last', setToServerValue:'REQUEST_TIME' });
+async function anaSend(){
+  if (!(ONLINE_HOST || EMU) || !fbUser) return;
+  const uid = fbUser.uid, day = dayStr(new Date()), ver = NEWS[0].id;
+  const intMap = o => ({ mapValue:{ fields:Object.fromEntries(Object.entries(o).slice(0, 60).map(([k, v]) => [k, { integerValue:String(v) }])) } });
+  const sdoc = `projects/${FB.project}/databases/(default)/documents/sessions/${ANA.sid}`, pdoc = `projects/${FB.project}/databases/(default)/documents/players/${uid}`;
+  const sf = { uid:{ stringValue:uid }, dur:{ integerValue:String(ANA.active) }, races:{ integerValue:String(ANA.races) }, fins:{ integerValue:String(ANA.fins) }, tr:intMap(ANA.tr), fn:intMap(ANA.fn),
+               screen:{ stringValue:String(ANA.screen || 'menu').slice(0, 20) }, track:{ stringValue:String(T ? T.def.id : '').slice(0, 20) }, device:{ stringValue:DEVICE }, day:{ stringValue:day }, v:{ stringValue:ver } };
+  const writes = [];
+  const sw = { update:{ name:sdoc, fields:sf }, updateTransforms:[tsNow()] };
+  if (!ANA.created) sw.updateTransforms.push({ fieldPath:'start', setToServerValue:'REQUEST_TIME' }); else sw.updateMask = { fieldPaths:Object.keys(sf) };
+  writes.push(sw);
+  // player totals: increments since the last send, plus milestones reached since then
+  const seen = store.get('facet.anaDay'), newDay = seen !== day, first = !store.get('facet.anaFirst');
+  const pf = { name:{ stringValue:lbName || '' }, device:{ stringValue:DEVICE }, v:{ stringValue:ver } }, tf = [tsNow(),
+    { fieldPath:'playSec', increment:{ integerValue:String(ANA.active - ANA.sent) } }, { fieldPath:'races', increment:{ integerValue:String(ANA.races - ANA.sentR) } },
+    { fieldPath:'fins', increment:{ integerValue:String(ANA.fins - ANA.sentF) } }];
+  if (!ANA.created) tf.push({ fieldPath:'sessions', increment:{ integerValue:'1' } });
+  if (newDay) tf.push({ fieldPath:'days', increment:{ integerValue:'1' } });
+  if (first) tf.push({ fieldPath:'first', setToServerValue:'REQUEST_TIME' });
+  const msNew = Object.keys(ANA.ms);
+  if (first) tf.push({ fieldPath:'m.opened', setToServerValue:'REQUEST_TIME' });
+  for (const k of msNew) tf.push({ fieldPath:'m.' + k, setToServerValue:'REQUEST_TIME' });
+  writes.push({ update:{ name:pdoc, fields:pf }, updateMask:{ fieldPaths:Object.keys(pf) }, updateTransforms:tf });
+  try {
+    const r = await fetch(`${FS}:commit`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + await fbUser.getIdToken() }, body:JSON.stringify({ writes }) });
+    if (!r.ok) return;
+    ANA.created = true; ANA.sent = ANA.active; ANA.sentR = ANA.races; ANA.sentF = ANA.fins; ANA.ms = {};
+    store.set('facet.anaDay', day); store.set('facet.anaFirst', 1);
+  } catch(e){}
+}
+setInterval(anaSend, 60000);
+addEventListener('visibilitychange', () => { if (document.hidden) anaSend(); });
+addEventListener('pagehide', () => anaSend());
+
+/* ---------------- live settings from the admin: announcement, double coins/XP, featured track ---------------- */
+let isAdminUser = false, banned = false;
+async function liveLoad(){
+  try {
+    const r = await fetch(`${FS}/config/live?key=${FB.key}`); if (!r.ok) return;
+    const f = (await r.json()).fields || {}, v = {};
+    for (const k in f) v[k] = 'booleanValue' in f[k] ? f[k].booleanValue : fsVal(f[k]);
+    liveCfg = v; renderLive();
+  } catch(e){}
+}
+function renderLive(){
+  const ann = liveCfg.announce, dis = store.get('facet.annSeen');
+  $('#annBar').hidden = !ann || dis === liveCfg.annId; $('#annText').textContent = ann || '';
+  const chips = [];
+  if (liveCfg.doubleCoins) chips.push('Double coins on now!');
+  if (liveCfg.doubleXp) chips.push('Double XP on now!');
+  const ft = liveCfg.featured && trackById(liveCfg.featured);
+  if (ft) chips.push(`Featured track: ${ft.name} (+25 coins on your first finish today)`);
+  $('#evChips').hidden = !chips.length; $('#evChips').innerHTML = chips.map(c => `<span class="evchip">${esc(c)}</span>`).join(' ');
+}
+$('#annX').addEventListener('click', () => { store.set('facet.annSeen', liveCfg.annId); renderLive(); });
+function featuredBonus(id){
+  if (!liveCfg.featured || id !== liveCfg.featured || cheatsOn()) return;
+  const k = 'facet.featPaid'; if (store.get(k) === todayKey() + id) return;
+  store.set(k, todayKey() + id); addCoins(25); setTimeout(() => toast(`Featured track bonus! +25 ${COIN}`, true), 1500);
+}
+// gifts from the admin wait in gifts/<id> until the player's game picks them up
+async function claimGifts(){
+  if (!fbUser) return;
+  try {
+    const tok = await fbUser.getIdToken();
+    const r = await fetch(`${FS}:runQuery`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + tok },
+      body:JSON.stringify({ structuredQuery:{ from:[{ collectionId:'gifts' }], where:{ fieldFilter:{ field:{ fieldPath:'to' }, op:'EQUAL', value:{ stringValue:fbUser.uid } } }, limit:20 } }) });
+    if (!r.ok) return;
+    for (const x of (await r.json()).filter(x => x.document)){
+      const f = x.document.fields, coins = +fsVal(f.coins) || 0, gems = +fsVal(f.gems) || 0, note = fsVal(f.note) || '';
+      const d = await fetch(`${FS}:commit`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + tok }, body:JSON.stringify({ writes:[{ delete:x.document.name }] }) });
+      if (!d.ok) continue;
+      if (coins) addCoins(coins, true); if (gems) addGems(gems); renderCoins();
+      toast(`Gift from the Facet Rally team${note ? ': ' + esc(note) : ''} ${coins ? `+${coins} ${COIN}` : ''} ${gems ? `+${gems} ${GEM}` : ''}`, true);
+    }
+  } catch(e){}
+}
+async function banCheck(){
+  if (!fbUser) return;
+  try { const r = await fetch(`${FS}/bans/${fbUser.uid}`, { headers:{ Authorization:'Bearer ' + await fbUser.getIdToken() } }); banned = r.status === 200; } catch(e){}
+}
+// the admin is whoever may read config/admin; the database rules decide, so no email is kept in the game
+async function adminCheck(){
+  isAdminUser = false;
+  if (!isGoogle()) return false;
+  try { const r = await fetch(`${FS}/config/admin`, { headers:{ Authorization:'Bearer ' + await fbUser.getIdToken() } }); isAdminUser = r.status === 200 || r.status === 404; } catch(e){}
+  return isAdminUser;
+}
+async function reportThing(kind, path, uid, label){
+  confirmBox('Report this?', `Report “${label}” as inappropriate? The Facet Rally team will take a look.`, 'Report', async () => {
+    try {
+      const a = await fbToken();
+      const st = await fsCommit([{ update:{ name:fsDoc('reports/' + rid(20)), fields:{ kind:{ stringValue:kind }, path:{ stringValue:path.slice(0, 120) }, targetUid:{ stringValue:String(uid || '').slice(0, 64) }, label:{ stringValue:String(label || '').slice(0, 40) }, by:{ stringValue:a.uid } } }, updateTransforms:[{ fieldPath:'at', setToServerValue:'REQUEST_TIME' }] }]);
+      toast(st === 200 ? 'Thanks, reported.' : 'Couldn’t send the report right now.');
+    } catch(e){ toast('Couldn’t send the report right now.'); }
+  });
+}
+// everything that happens shortly after the game opens, once the sign-in code is ready
+(ONLINE_HOST || EMU) && setTimeout(async () => {
+  liveLoad(); setInterval(liveLoad, 5*60000);
+  try { await fbSignedIn(); } catch(e){ return; }
+  banCheck(); claimGifts(); setInterval(claimGifts, 5*60000); adminCheck(); anaSend();
+}, 3000);
+
+/* ---------------- admin console: stats, live controls, players, reports, rooms ---------------- */
+async function adminQuery(coll, q){
+  const r = await fetch(`${FS}:runQuery`, { method:'POST', headers:{ 'Content-Type':'application/json', Authorization:'Bearer ' + await fbUser.getIdToken() }, body:JSON.stringify({ structuredQuery:Object.assign({ from:[{ collectionId:coll }] }, q) }) });
+  if (!r.ok) throw new Error(coll + ' ' + r.status);
+  return (await r.json()).filter(x => x.document).map(x => { const f = x.document.fields || {}, o = { _id:x.document.name.split('/').pop(), _name:x.document.name };
+    for (const k in f) o[k] = f[k].mapValue ? Object.fromEntries(Object.entries(f[k].mapValue.fields || {}).map(([a, b]) => [a, fsVal(b) ?? b.timestampValue])) : ('booleanValue' in f[k] ? f[k].booleanValue : fsVal(f[k]));
+    return o; });
+}
+async function adminDelete(path){
+  const st = await fsCommit([{ delete:fsDoc(path) }]).catch(() => 0);
+  toast(st === 200 ? 'Deleted' : 'Couldn’t delete (are you signed in as the admin?)'); return st === 200;
+}
+async function adminBan(uid, name, unban){
+  if (!uid) return;
+  confirmBox(unban ? `Unban ${name}?` : `Ban ${name}?`, unban ? 'They’ll be able to post times, share tracks and join rooms again.' : 'They won’t be able to post leaderboard times, share tracks or join multiplayer rooms. Their existing entries stay until you delete them.', unban ? 'Unban' : 'Ban', async () => {
+    const st = await fsCommit(unban ? [{ delete:fsDoc('bans/' + uid) }] : [{ update:{ name:fsDoc('bans/' + uid), fields:{ name:{ stringValue:String(name || '').slice(0, 40) } } }, updateTransforms:[{ fieldPath:'at', setToServerValue:'REQUEST_TIME' }] }]).catch(() => 0);
+    try { const F = await fbLoad(); if (unban) await F.db.remove(F.db.ref(F.rd, 'bans/' + uid)); else await F.db.set(F.db.ref(F.rd, 'bans/' + uid), true); } catch(e){}
+    toast(st === 200 ? (unban ? 'Unbanned' : 'Banned') : 'Couldn’t change the ban');
+  });
+}
+const pct = (a, b) => b ? Math.round(a/b*100) + '%' : '–';
+const mins = s => s >= 3600 ? (s/3600).toFixed(1) + ' h' : s >= 60 ? Math.round(s/60) + ' min' : Math.round(s) + ' s';
+function bars(rows, max){ const m = max || Math.max(1, ...rows.map(r => r[1])); return `<div class="abars">${rows.map(([k, v, lab]) => `<div class="r"><em>${esc(k)}</em><i style="width:${Math.max(1, v/m*100)}%"></i><span>${lab ?? v}</span></div>`).join('')}</div>`; }
+async function renderAdminOnline(body){
+  const h = t => { const e = document.createElement('h3'); e.textContent = t; body.appendChild(e); };
+  const div = html => { const d = document.createElement('div'); d.innerHTML = html; body.appendChild(d); return d; };
+  if (!(ONLINE_HOST || EMU)){ div('<p class="anote">The online tools work on the Facet Rally website.</p>'); return; }
+  try { await fbSignedIn(); } catch(e){ div('<p class="anote">Couldn’t reach the online services.</p>'); return; }
+  if (!isGoogle() || !(await adminCheck())){
+    const d = div(`<p class="anote">${isGoogle() ? `Signed in as ${esc(fbUser.email)}, which isn’t the admin account.` : 'Sign in with the admin Google account to see player stats, run live events and moderate.'}</p><div class="arow2"><button id="admG">${isGoogle() ? 'Use a different account' : 'Sign in with Google'}</button></div>`);
+    d.querySelector('#admG').onclick = async () => { if (isGoogle()) await googleSignOut(); await googleSignIn(); renderAdmin(); };
+    return;
+  }
+  // live controls
+  h('Live controls');
+  const lc = div(`<div class="arow2"><textarea id="admAnn" maxlength="200" placeholder="Announcement shown at the top of everyone's menu">${esc(liveCfg.announce || '')}</textarea></div>
+    <div class="arow2"><label><input type="checkbox" id="admDC" ${liveCfg.doubleCoins ? 'checked' : ''}> Double coins</label><label><input type="checkbox" id="admDX" ${liveCfg.doubleXp ? 'checked' : ''}> Double XP</label>
+    <select id="admFeat"><option value="">No featured track</option>${TRACKS.map(t => `<option value="${t.id}" ${liveCfg.featured === t.id ? 'selected' : ''}>${esc(t.name)}</option>`).join('')}</select></div>
+    <div class="arow2"><button id="admLive">Publish to all players</button><button id="admClr">Clear announcement</button></div>`);
+  const pub = async clear => {
+    const ann = clear ? '' : lc.querySelector('#admAnn').value.trim().slice(0, 200);
+    const fields = { announce:{ stringValue:ann }, annId:{ stringValue:ann ? rid(8) : '' }, doubleCoins:{ booleanValue:lc.querySelector('#admDC').checked }, doubleXp:{ booleanValue:lc.querySelector('#admDX').checked }, featured:{ stringValue:lc.querySelector('#admFeat').value } };
+    const st = await fsCommit([{ update:{ name:fsDoc('config/live'), fields } }]).catch(() => 0);
+    toast(st === 200 ? 'Live settings published' : 'Couldn’t publish'); if (st === 200){ await liveLoad(); if (clear) lc.querySelector('#admAnn').value = ''; }
+  };
+  lc.querySelector('#admLive').onclick = () => pub(false); lc.querySelector('#admClr').onclick = () => pub(true);
+  // stats
+  h('Player stats');
+  const sb = div('<div class="arow2"><button id="admStats">Load stats (last 14 days)</button></div><p class="anote">Loading reads up to a few thousand records from the free daily allowance, so it waits for you to tap.</p>');
+  sb.querySelector('#admStats').onclick = async () => {
+    sb.innerHTML = '<p class="anote">Loading…</p>';
+    try {
+      const since = new Date(Date.now() - 14*864e5).toISOString();
+      const [ss, ps] = await Promise.all([
+        adminQuery('sessions', { where:{ fieldFilter:{ field:{ fieldPath:'start' }, op:'GREATER_THAN_OR_EQUAL', value:{ timestampValue:since } } }, orderBy:[{ field:{ fieldPath:'start' }, direction:'DESCENDING' }], limit:3000 }),
+        adminQuery('players', { orderBy:[{ field:{ fieldPath:'last' }, direction:'DESCENDING' }], limit:3000 })]);
+      const now = Date.now(), t = v => v ? Date.parse(v) : 0;
+      const online = ss.filter(x => now - t(x.last) < 150000).length;
+      const durs = ss.map(x => +x.dur || 0).sort((a, b) => a - b), tot = durs.reduce((a, b) => a + b, 0);
+      const med = durs.length ? durs[Math.floor(durs.length/2)] : 0;
+      const players14 = new Set(ss.map(x => x.uid)).size;
+      let html = `<div class="astat"><div><b>${online}</b><small>Online now</small></div><div><b>${players14}</b><small>Players, 14 days</small></div><div><b>${ss.length}</b><small>Sessions, 14 days</small></div>
+        <div><b>${mins(durs.length ? tot/durs.length : 0)}</b><small>Average session</small></div><div><b>${mins(med)}</b><small>Median session</small></div><div><b>${mins(tot)}</b><small>Total play time</small></div>
+        <div><b>${ps.length}</b><small>Players ever</small></div><div><b>${pct(ps.filter(p => (+p.days || 0) >= 2).length, ps.length)}</b><small>Came back another day</small></div></div>`;
+      // players and sessions per day
+      const days = []; for (let k = 13; k >= 0; k--) days.push(dayStr(new Date(now - k*864e5)));
+      html += '<h3>Players per day</h3>' + bars(days.map(d => { const s2 = ss.filter(x => x.day === d); return [d.slice(5), new Set(s2.map(x => x.uid)).size]; }));
+      // session length
+      const bands = [['Under 1 min', 0, 60], ['1–3 min', 60, 180], ['3–10 min', 180, 600], ['10–30 min', 600, 1800], ['30+ min', 1800, 1e9]];
+      html += '<h3>How long sessions last</h3>' + bars(bands.map(([k, a, b]) => { const n = durs.filter(d => d >= a && d < b).length; return [k, n, `${n} · ${pct(n, durs.length)}`]; }));
+      // where players were when they left
+      const NAMES = { menu:'Main menu', race:'Racing', finish:'Finish screen', garage:'Garage', pause:'Paused', lb:'Leaderboards', chal:'Challenges', editor:'Track editor', multi:'Multiplayer', gallery:'Gallery', settings:'Settings', save:'Save & load', career:'Career', howto:'How to play', news:'News' };
+      const ended = ss.filter(x => now - t(x.last) >= 150000), lastAt = {};
+      for (const x of ended){ const k = NAMES[x.screen] || x.screen || '?'; lastAt[k] = (lastAt[k] || 0) + 1; }
+      html += '<h3>Where players were when they left</h3>' + bars(Object.entries(lastAt).sort((a, b) => b[1] - a[1]).slice(0, 10).map(([k, n]) => [k, n, `${n} · ${pct(n, ended.length)}`]));
+      const leftRace = {}; for (const x of ended) if (x.screen === 'race' || x.screen === 'pause'){ const n = (trackById(x.track) || {}).name || x.track; leftRace[n] = (leftRace[n] || 0) + 1; }
+      if (Object.keys(leftRace).length) html += '<h3>Tracks players quit on</h3>' + bars(Object.entries(leftRace).sort((a, b) => b[1] - a[1]).slice(0, 8));
+      // new-player funnel
+      const fun = [['Opened the game', 'opened'], ['Started the tutorial', 'tutorial_start'], ['Finished the tutorial', 'tutorial_done'], ['Skipped the tutorial', 'tutorial_skip'], ['Started a race', 'race1'], ['Finished a race', 'finish1'], ['Raced 3 times', 'races3']];
+      const base = ps.filter(p => p.m && p.m.opened).length || ps.length;
+      html += `<h3>New-player funnel (${base} players)</h3>` + bars([...fun.map(([k, m]) => { const n = ps.filter(p => p.m && p.m[m]).length; return [k, n, `${n} · ${pct(n, base)}`]; }),
+        ['Came back another day', ps.filter(p => (+p.days || 0) >= 2).length, `${ps.filter(p => (+p.days || 0) >= 2).length} · ${pct(ps.filter(p => (+p.days || 0) >= 2).length, base)}`]], base);
+      // tracks and devices
+      const tr = {}, fn = {}; for (const x of ss){ for (const k in x.tr || {}) tr[k] = (tr[k] || 0) + (+x.tr[k] || 0); for (const k in x.fn || {}) fn[k] = (fn[k] || 0) + (+x.fn[k] || 0); }
+      html += '<h3>Most raced tracks (finish rate)</h3>' + bars(Object.entries(tr).sort((a, b) => b[1] - a[1]).slice(0, 12).map(([k, n]) => [(trackById(k) || {}).name || k, n, `${n} · ${pct(fn[k] || 0, n)}`]));
+      const dev = {}; for (const p of ps) dev[p.device || '?'] = (dev[p.device || '?'] || 0) + 1;
+      html += '<h3>Devices</h3>' + bars(Object.entries(dev).sort((a, b) => b[1] - a[1]).map(([k, n]) => [{ ipad:'iPad', phone:'Phone', tablet:'Tablet', computer:'Computer' }[k] || k, n, `${n} · ${pct(n, ps.length)}`]));
+      sb.innerHTML = html;
+    } catch(e){ sb.innerHTML = `<p class="anote">Couldn’t load stats (${esc(e.message)}).</p>`; }
+  };
+  // players: find by name, give rewards, ban
+  h('Players');
+  const pl = div(`<div class="arow2"><input id="admFind" placeholder="Racing name (exact)" maxlength="16"><button id="admFindGo">Find</button></div><div class="alist" id="admFound"></div>`);
+  const find = async () => {
+    const nm = cleanName(pl.querySelector('#admFind').value), out = pl.querySelector('#admFound'); if (!nm) return;
+    out.innerHTML = '<p class="anote">Searching…</p>';
+    try {
+      const found = await adminQuery('players', { where:{ fieldFilter:{ field:{ fieldPath:'name' }, op:'EQUAL', value:{ stringValue:nm } } }, limit:20 });
+      out.textContent = '';
+      if (!found.length){ out.innerHTML = '<p class="anote">Nobody with that exact name. Names are saved when a player is online with this update.</p>'; return; }
+      for (const p of found){
+        const d = document.createElement('div'); d.className = 'it';
+        d.innerHTML = `<div><b>${esc(p.name)}</b><small>${esc(p.device || '')} · ${+p.sessions || 0} sessions · ${mins(+p.playSec || 0)} played · last seen ${p.last ? new Date(p.last).toLocaleString() : '?'}</small></div>
+          <div class="b"><input type="number" min="0" max="100000" value="500" style="width:80px"><button data-g="coins">Give coins</button><button data-g="gems">Give gems</button><button class="danger" data-b="1">Ban</button><button data-b="0">Unban</button></div>`;
+        d.querySelectorAll('[data-g]').forEach(b => b.onclick = async () => {
+          const n = Math.max(0, Math.min(100000, Math.floor(+d.querySelector('input').value || 0))); if (!n) return;
+          const st = await fsCommit([{ update:{ name:fsDoc('gifts/' + rid(20)), fields:{ to:{ stringValue:p._id }, [b.dataset.g]:{ integerValue:String(n) }, note:{ stringValue:'' } } }, updateTransforms:[{ fieldPath:'at', setToServerValue:'REQUEST_TIME' }] }]).catch(() => 0);
+          toast(st === 200 ? `Sent ${n} ${b.dataset.g} to ${esc(p.name)}. They get it next time they play.` : 'Couldn’t send the gift');
+        });
+        d.querySelectorAll('[data-b]').forEach(b => b.onclick = () => adminBan(p._id, p.name, b.dataset.b === '0'));
+        out.appendChild(d);
+      }
+    } catch(e){ out.innerHTML = `<p class="anote">Search failed (${esc(e.message)}).</p>`; }
+  };
+  pl.querySelector('#admFindGo').onclick = find; pl.querySelector('#admFind').onkeydown = e => { if (e.key === 'Enter') find(); };
+  // reports
+  h('Reports');
+  const rp = div('<div class="alist" id="admReps"><p class="anote">Loading…</p></div>');
+  (async () => {
+    const out = rp.querySelector('#admReps');
+    try {
+      const reps = await adminQuery('reports', { orderBy:[{ field:{ fieldPath:'at' }, direction:'DESCENDING' }], limit:50 });
+      out.textContent = '';
+      if (!reps.length){ out.innerHTML = '<p class="anote">No reports.</p>'; return; }
+      for (const x of reps){
+        const d = document.createElement('div'); d.className = 'it';
+        d.innerHTML = `<div><b>${x.kind === 'track' ? 'Track' : 'Name'}: ${esc(x.label || '')}</b><small>${esc(x.path || '')} · ${x.at ? new Date(x.at).toLocaleString() : ''}</small></div>
+          <div class="b"><button class="danger" data-a="del">Delete it</button><button class="danger" data-a="ban">Ban author</button><button data-a="ok">Dismiss</button></div>`;
+        d.querySelector('[data-a="del"]').onclick = async () => { if (await adminDelete(x.path)){ await adminDelete('reports/' + x._id); d.remove(); } };
+        d.querySelector('[data-a="ban"]').onclick = () => adminBan(x.targetUid, x.label);
+        d.querySelector('[data-a="ok"]').onclick = async () => { if (await adminDelete('reports/' + x._id)) d.remove(); };
+        out.appendChild(d);
+      }
+    } catch(e){ out.innerHTML = `<p class="anote">Couldn’t load reports (${esc(e.message)}).</p>`; }
+  })();
+  // live multiplayer rooms
+  h('Live rooms');
+  const rm = div('<div class="alist" id="admRooms"><p class="anote">Loading…</p></div>');
+  (async () => {
+    const out = rm.querySelector('#admRooms');
+    try {
+      const F = await fbLoad(), snap = await F.db.get(F.db.ref(F.rd, 'rooms')), list = [];
+      snap.forEach(c => { const v = c.val() || {}; const n = Object.keys(v.players || {}).length; if (n) list.push([c.key, v]); });
+      out.textContent = '';
+      if (!list.length){ out.innerHTML = '<p class="anote">No rooms with players right now.</p>'; return; }
+      for (const [code, v] of list){
+        const ps = Object.values(v.players || {}), m = v.meta || {}, tr = trackById(m.track);
+        const d = document.createElement('div'); d.className = 'it';
+        d.innerHTML = `<div><b>Room ${esc(code)} · ${m.state === 'race' ? 'racing' : 'in the lobby'}</b><small>${esc(tr ? tr.name : m.track || '')} · ${ps.map(p => esc(p.name || 'Racer') + (p.fin ? ' (' + fmt(p.fin/1000) + ')' : '')).join(', ')}</small></div><div class="b"><button>Join</button></div>`;
+        d.querySelector('button').onclick = () => { closeAdmin(); mpJoin(code); };
+        out.appendChild(d);
+      }
+    } catch(e){ out.innerHTML = `<p class="anote">Couldn’t load rooms (${esc(e.message)}).</p>`; }
+  })();
+}
+
 /* ---------------- track gallery (shared custom tracks) ---------------- */
 let galSort = 'at', galPlayed = new Set();
 const galLiked = new Set(store.get('facet.liked') || []);
@@ -4561,7 +4928,7 @@ async function renderGallery(){
   const el = $('#galList'); el.innerHTML = '<p class="note">Loading…</p>';
   let list;
   try { list = await galQuery(); }
-  catch(e){ el.innerHTML = `<p class="note">Couldn’t load the gallery. ${location.hostname.endsWith('github.io') ? 'Check your internet connection.' : `It works on the website: <a href="${SITE}" target="_blank" rel="noopener">${SITE}</a>`}</p>`; return; }
+  catch(e){ el.innerHTML = `<p class="note">Couldn’t load the gallery. ${ONLINE_HOST ? 'Check your internet connection.' : `It works on the website: <a href="${SITE}" target="_blank" rel="noopener">${SITE}</a>`}</p>`; return; }
   el.textContent = '';
   if (!list.length){ el.innerHTML = '<p class="note">No shared tracks yet. Build one in Custom tracks and be the first to share!</p>'; return; }
   const me = myUid();
@@ -4572,7 +4939,7 @@ async function renderGallery(){
     const row = document.createElement('div'); row.className = 'galrow';
     row.innerHTML = `<span class="thumb">${thumbSvg(def, 56)}</span><span class="tt"><b>${esc(t.name)}</b><span class="meta">by ${esc(g.author || 'Racer')}${mine ? ' (you)' : ''} · ${t.pieces.length} pieces · ${THEMES[t.theme].name} · ${def.km.toFixed(2)} km</span>` +
       `<span class="meta">▶ ${g.plays || 0} play${g.plays === 1 ? '' : 's'} · ♥ <span class="lk">${g.likes || 0}</span> like${g.likes === 1 ? '' : 's'}</span></span>` +
-      `<div class="acts"><button class="mini go2" data-a="play">Race</button><button class="mini${liked ? ' on' : ''}" data-a="like">${liked ? '♥ Liked' : '♡ Like'}</button><button class="mini" data-a="copy">Save a copy</button>${mine ? '<button class="mini" data-a="del">Delete</button>' : ''}</div>`;
+      `<div class="acts"><button class="mini go2" data-a="play">Race</button><button class="mini${liked ? ' on' : ''}" data-a="like">${liked ? '♥ Liked' : '♡ Like'}</button><button class="mini" data-a="copy">Save a copy</button>${mine || isAdminUser ? '<button class="mini" data-a="del">Delete</button>' : ''}${mine ? '' : '<button class="mini" data-a="rep">Report</button>'}${isAdminUser && !mine ? '<button class="mini" data-a="ban">Ban author</button>' : ''}</div>`;
     row.addEventListener('click', async e => {
       const b = e.target.closest('[data-a]'); if (!b) return;
       const a = b.dataset.a;
@@ -4591,6 +4958,8 @@ async function renderGallery(){
         } catch(err){ toast('Couldn’t like it right now'); }
         b.disabled = false;
       }
+      if (a === 'rep') reportThing('track', 'tracks/' + g.id, g.uid, t.name);
+      if (a === 'ban') adminBan(g.uid, g.author);
       if (a === 'copy'){ const c = galTrack(g); customTracks.push(c); saveCustom(); toast(`Saved “${esc(c.name)}” to My tracks`); }
       if (a === 'del') confirmBox('Remove from the gallery?', `“${t.name}” will be removed from the gallery for everyone. Your own copy in My tracks stays.`, 'Remove', async () => {
         const st = await fsCommit([{ delete:fsDoc('tracks/' + g.id) }]).catch(() => 0);
@@ -4601,7 +4970,8 @@ async function renderGallery(){
   }
 }
 async function shareTrack(t){
-  if (!lbName){ toast('Pick a racing name first (in Leaderboards or Multiplayer)'); return; }
+  if (banned){ toast('This account can’t share tracks.'); return; }
+  if (!lbName) setRacingName(autoName(), true);
   if (t.shared){ showScreen('gallery'); renderGallery(); return; }
   const id = Array.from(crypto.getRandomValues(new Uint8Array(15)), x => 'abcdefghijklmnopqrstuvwxyz0123456789'[x % 36]).join('');
   try {
@@ -4609,9 +4979,10 @@ async function shareTrack(t){
     const st = await fsCommit([{ update:{ name:fsDoc('tracks/' + id), fields:{ name:{ stringValue:String(t.name || 'Custom track').slice(0, 32) }, author:{ stringValue:lbName }, theme:{ stringValue:t.theme },
       width:{ integerValue:String(t.width) }, pieces:{ stringValue:t.pieces.join('') }, uid:{ stringValue:uid }, plays:{ integerValue:'0' }, likes:{ integerValue:'0' } } },
       currentDocument:{ exists:false }, updateTransforms:[{ fieldPath:'at', setToServerValue:'REQUEST_TIME' }] }]);
+    if (st === 403 && banned){ toast('This account can’t share tracks.'); return; }
     if (st !== 200) throw new Error('share ' + st);
-    t.shared = id; saveCustom(); renderEdList(); toast(`Shared “${esc(t.name)}” to the Track gallery`);
-  } catch(e){ toast(location.hostname.endsWith('github.io') ? 'Couldn’t share right now. Check your connection.' : 'Sharing works on the Facet Rally website.'); }
+    t.shared = id; logEvent('share'); saveCustom(); renderEdList(); toast(`Shared “${esc(t.name)}” to the Track gallery`);
+  } catch(e){ toast(ONLINE_HOST ? 'Couldn’t share right now. Check your connection.' : 'Sharing works on the Facet Rally website.'); }
 }
 $('#galSort').addEventListener('click', e => { const b = e.target.closest('button'); if (b){ galSort = b.dataset.v; renderGallery(); } });
 
@@ -4625,13 +4996,14 @@ const mpIsHost = () => !!(mp.meta && mp.meta.host === myUid());
 const mpRef = p => mp.F.db.ref(mp.F.rd, p);
 function mpSetMsg(t){ $('#mpMsg').textContent = t || ''; }
 async function mpReady(){
-  if (!lbName){ throw new Error('Pick a racing name first.'); }
+  if (banned) throw Object.assign(new Error('This account can’t join multiplayer rooms.'), { user:1 });
+  if (!lbName) setRacingName(autoName(), true);
   const F = await fbSignedIn(); mp.F = F;
   if (!mp.offSub){ mp.offSub = F.db.onValue(F.db.ref(F.rd, '.info/serverTimeOffset'), s => { mp.offs = s.val() || 0; }); }
   return F;
 }
 function mpRenderHome(){
-  $('#mpName').value = lbName;
+  $('#mpName').value = lbName || '';
   $('#mpHome').hidden = !!mp.code; $('#mpLobby').hidden = !mp.code;
   if (!mp.code) mpWatchOpen();
 }
@@ -4662,7 +5034,7 @@ async function mpCreate(pub){
     const track = TRACKS.some(t => t.id === curId) ? curId : 'meadow';
     await F.db.set(mpRef(`rooms/${code}/meta`), { host:myUid(), track, wx:'clear', state:'lobby', round:0, startAt:0, pub:pub ? 1 : 0, at:F.db.serverTimestamp() });
     await mpJoin(code);
-  } catch(e){ mpSetMsg(e.message.includes('name') ? e.message : 'Couldn’t create a room. ' + (location.hostname.endsWith('github.io') ? 'Check your connection.' : `Multiplayer works on the website: ${SITE}`)); }
+  } catch(e){ mpSetMsg(e.user ? e.message : 'Couldn’t create a room. ' + (ONLINE_HOST ? 'Check your connection.' : `Multiplayer works on the website: ${SITE}`)); }
 }
 async function mpJoin(code){
   code = String(code || '').toUpperCase().replace(/[^A-Z]/g, '').slice(0, 4);
@@ -4683,7 +5055,7 @@ async function mpJoin(code){
     mp.beat = setInterval(mpHeartbeat, 60000);
     history.replaceState(null, '', location.pathname + '?room=' + code);
     mpSetMsg(''); showScreen('multi'); mpRenderHome(); mpRenderLobby();
-  } catch(e){ mpSetMsg(e.message.includes('name') ? e.message : 'Couldn’t join that room.'); }
+  } catch(e){ mpSetMsg(e.user ? e.message : 'Couldn’t join that room.'); }
 }
 function mpHeartbeat(){
   if (!mp.code || !mpIsHost() || !mp.meta.pub) return;
@@ -4819,7 +5191,7 @@ function mpFinished(t){
   if (!mp.active) return;
   mp.F.db.update(mpRef(`rooms/${mp.code}/players/${myUid()}`), { fin:Math.round(t*1000), q:1e9 }).catch(() => {});
 }
-$('#mpNameSave').addEventListener('click', () => { const v = cleanName($('#mpName').value); if (v.length < 2){ mpSetMsg('Use 2 to 16 letters, numbers or spaces.'); return; } lbName = v; store.set('facet.lbName', v); mpSetMsg('Name saved.'); });
+$('#mpNameSave').addEventListener('click', () => { const v = cleanName($('#mpName').value); if (v.length < 2){ mpSetMsg('Use 2 to 16 letters, numbers or spaces.'); return; } setRacingName(v); mpSetMsg('Name saved.'); });
 $('#mpCreate').addEventListener('click', () => mpCreate(true));
 $('#mpCreatePriv').addEventListener('click', () => mpCreate(false));
 $('#mpJoin').addEventListener('click', () => mpJoin($('#mpCode').value));
@@ -4829,12 +5201,12 @@ $('#fMpLeave').addEventListener('click', () => mpLeave());
 $('#pMpLeave').addEventListener('click', () => mpLeave());
 $('#fMpLobby').addEventListener('click', () => mpSetMeta({ state:'lobby' }));
 $('#pMpLobby').addEventListener('click', () => mpSetMeta({ state:'lobby' }));
-$('#mpCopy').addEventListener('click', () => { const link = SITE + '?room=' + mp.code; (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(() => toast('Invite link copied')).catch(() => toast('Room code: ' + mp.code)); });
+$('#mpCopy').addEventListener('click', () => { const link = (ONLINE_HOST ? location.origin + location.pathname : SITE) + '?room=' + mp.code; (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(() => toast('Invite link copied')).catch(() => toast('Room code: ' + mp.code)); });
 $('#mpTrack').addEventListener('change', e => mpSetMeta({ track:e.target.value }));
 $('#mpWx').addEventListener('click', e => { const b = e.target.closest('button'); if (b) mpSetMeta({ wx:b.dataset.v }); });
 $('#mpStart').addEventListener('click', () => { if (!mpIsHost()) return; mpSetMeta({ state:'race', round:(mp.meta.round || 0) + 1, startAt:mpNow() + 5000, wx:mp.meta.wx || 'clear' }); });
 // opening an invite link joins the room
-if (/[?&]room=([A-Za-z]{4})/.test(location.search)) setTimeout(() => { showScreen('multi'); if (lbName) mpJoin(RegExp.$1); else { mpRenderHome(); mpSetMsg('Pick a racing name, then tap Join.'); $('#mpCode').value = RegExp.$1.toUpperCase(); } }, 800);
+if (/[?&]room=([A-Za-z]{4})/.test(location.search)){ const code = RegExp.$1; setTimeout(() => { store.set('facet.tut.game', 1); showScreen('multi'); mpJoin(code); }, 1500); }
 
 /* ---------------- challenges screen ---------------- */
 function renderChallenges(){
@@ -4853,7 +5225,7 @@ function renderChallenges(){
 }
 
 /* ---------------- garage ---------------- */
-let gCat = 'paint', gConfirm = null, gSelId = null;
+let gCat = 'shop', gConfirm = null, gSelId = null;
 const swatch = it => ANIMC[it.color] ? ANIMC[it.color][1] : (it.color || '#e6ebf3');
 function itemIcon(it){
   const glyph = { wing:'<path d="M3 14h18M6 14l2-5h8l2 5" stroke="#131d33" stroke-width="2" fill="none" stroke-linecap="round"/>', decal:'<path d="M9 3v18M15 3v18" stroke="#131d33" stroke-width="2.4"/>',
@@ -4881,47 +5253,131 @@ function renderSel(){
   if (eq){ status = 'On your car'; acts = `<button data-a="close">Done</button>`; }
   else if (owned){ status = 'You own this · trying it on'; acts = `<button data-a="close">Cancel</button><button class="use" data-a="use">Put it on</button>`; }
   else {
-    const short = it.price - profile.coins;
-    status = short > 0 ? `Trying it on · you need ${short.toLocaleString()} more coins` : 'Trying it on';
-    acts = `<button data-a="close">Cancel</button><button class="buy" data-a="buy" ${short > 0 ? 'disabled' : ''}>${COIN} Buy ${it.price.toLocaleString()}</button>`;
+    const pr = priceOf(it), short = pr.amt - wallet(pr.cur);
+    status = short > 0 ? `Trying it on · you need ${short.toLocaleString()} more ${pr.cur}` : 'Trying it on';
+    acts = `<button data-a="close">Cancel</button><button class="buy" data-a="buy" ${short > 0 ? 'disabled' : ''}>${curIcon(pr.cur)} Buy ${pr.amt.toLocaleString()}</button>`;
   }
   const B = it.cat === 'body' ? BODIES[it.id] : null;
   const bars = B ? `<span class="bstats">${['Speed','Acceleration','Handling','Off-road'].map((n, k) => `<span><em>${n}</em><i>${[1,2,3,4,5].map(v => `<b class="${v <= B.ratings[k] ? 'on' : ''}"></b>`).join('')}</i></span>`).join('')}</span><small>${B.blurb}</small>` : '';
   box.classList.toggle('isbody', !!B);
-  box.innerHTML = `<span class="sw" style="background:${swatch(it)}">${it.cat === 'body' ? itemIcon(it).replace(/^<span class="sw"[^>]*>|<\/span>$/g, '') : ''}</span><span class="info"><b>${esc(it.name)}</b><small>${esc(cat)} · ${status}</small>${bars}${PREVIEW_NOTE[it.cat] && !eq && !B ? `<small>${PREVIEW_NOTE[it.cat]}</small>` : ''}</span><span class="acts">${acts}</span>`;
+  box.innerHTML = `<span class="sw" style="background:${swatch(it)}">${it.cat === 'body' ? itemIcon(it).replace(/^<span class="sw"[^>]*>|<\/span>$/g, '') : ''}</span><span class="info"><b>${esc(it.name)}</b><small>${it.price ? `<b style="color:${RARITY[it.rarity][1]}">${RARITY[it.rarity][0]}</b> · ` : ''}${esc(cat)} · ${status}</small>${bars}${PREVIEW_NOTE[it.cat] && !eq && !B ? `<small>${PREVIEW_NOTE[it.cat]}</small>` : ''}</span><span class="acts">${acts}</span>`;
 }
 $('#gSel').addEventListener('click', e => {
   const b = e.target.closest('button'); if (!b || b.disabled) return;
   const it = ITEM[gSelId]; if (!it) return;
   if (b.dataset.a === 'close'){ clearPreview(); renderGarage(); return; }
   if (b.dataset.a === 'buy'){
-    if (owns(it.id) || profile.coins < it.price) return;
-    profile.coins -= it.price; profile.owned.push(it.id); careerEvent('buy');
+    const pr = priceOf(it);
+    if (owns(it.id) || wallet(pr.cur) < pr.amt) return;
+    if (pr.cur === 'gems') profile.gems -= pr.amt; else profile.coins -= pr.amt;
+    profile.owned.push(it.id); careerEvent('buy'); logEvent('buy', { item:it.id });
     toast(`Bought ${esc(it.name)}`, true); blip([784, 1175], .08);
   } else blip([660, 880], .06);
   profile.equipped[it.cat] = it.id; preview = null;
   saveProfile(); applyCosmetics(); renderGarage();
 });
+/* ---------------- shop: today's items, bundles and crates ---------------- */
+const SALE = .7;
+const CAT_SHORT = { body:'body', paint:'paint', rims:'wheels', wing:'wing', decal:'decal', glow:'underglow', trail:'trail', top:'topper', flame:'boost flame', tint:'window tint', lights:'headlights', smoke:'drift smoke', victory:'finish celebration' };
+const itemLabel = it => `${it.name} ${CAT_SHORT[it.cat] || ''}`.trim();
+function todaysShop(){
+  const k = todayKey(); if (todaysShop.k === k) return todaysShop.v;
+  const r = rng(k*31 + 7), pool = Object.values(ITEM).filter(i => i.price && i.cat !== 'body');
+  const by = rr => pool.filter(i => rr.includes(i.rarity)), pick = (list, out) => { const c = list.filter(i => !out.includes(i.id)); return c[Math.floor(r()*c.length)].id; };
+  const out = [];
+  for (const rr of [['common','rare'], ['common','rare'], ['rare','epic'], ['rare','epic'], ['epic'], ['legendary']]) out.push(pick(by(rr), out));
+  const sale = new Set(); while (sale.size < 2) sale.add(out[Math.floor(r()*out.length)]);
+  todaysShop.k = k; return (todaysShop.v = { items:out, sale });
+}
+// what an item costs right now: gems for Legendary cosmetics, coins for everything else, with today's discount
+function priceOf(it){
+  const onSale = todaysShop().sale.has(it.id);
+  if (it.gems) return { cur:'gems', amt: onSale ? Math.ceil(it.gems*SALE) : it.gems, was: onSale ? it.gems : 0 };
+  return { cur:'coins', amt: onSale ? Math.round(it.price*SALE/5)*5 : it.price, was: onSale ? it.price : 0 };
+}
+const wallet = cur => cur === 'gems' ? (profile.gems || 0) : profile.coins;
+const curIcon = cur => cur === 'gems' ? GEM : COIN;
+const BUNDLES = [
+  ['neon', 'Neon Night', ['p_cyan','r_neon','g_cyan','t_neon','h_cyan','f_cyan']],
+  ['gold', 'Golden Champion', ['p_gold','r_gold','g_gold','t_gold','v_gold','o_crown']],
+  ['ice', 'Ice Age', ['p_ice','r_ice','g_ice','t_frost','f_ice','v_ice','h_white']],
+  ['hotrod', 'Hot Rod', ['p_candy','d_flames','t_fire','f_red','s_red','v_fire','w_drag']],
+  ['legend', 'Racing Legend', ['p_carbon','d_n1','w_gt','r_carbon','n_black','s_black']],
+  ['toxic', 'Toxic', ['p_toxic','t_toxic','f_toxic','g_lime','r_lime','s_lime']],
+  ['party', 'Party Time', ['p_bubblegum','o_party','t_confetti','v_candy','d_dots','h_pink']]
+];
+const bundlePrice = ids => Math.round(ids.filter(id => !owns(id)).reduce((s, id) => s + ITEM[id].price, 0)*.75/5)*5;
+const CRATE = { price:400, odds:[['common',58],['rare',28],['epic',12],['legendary',2]] };
+function openCrate(){
+  if (profile.coins < CRATE.price){ toast(`You need ${CRATE.price - profile.coins} more coins`); return; }
+  const pool = rr => Object.values(ITEM).filter(i => i.price && i.cat !== 'body' && i.rarity === rr && !owns(i.id));
+  if (!['common','rare','epic','legendary'].some(rr => pool(rr).length)){ toast('You already own every crate item!'); return; }
+  let roll = Math.random()*100, rr = 'common';
+  for (const [k, p] of CRATE.odds){ if (roll < p){ rr = k; break; } roll -= p; }
+  const order = ['legendary','epic','rare','common'];
+  let list = pool(rr);
+  for (let i = order.indexOf(rr) + 1; !list.length && i < order.length; i++) list = pool(order[i]);   // nothing left at that rarity: drop one tier
+  for (let i = order.indexOf(rr) - 1; !list.length && i >= 0; i--) list = pool(order[i]);
+  const it = list[Math.floor(Math.random()*list.length)];
+  profile.coins -= CRATE.price; profile.owned.push(it.id); saveProfile(); careerEvent('buy');
+  logEvent('crate', { item:it.id, rarity:it.rarity });
+  if (it.rarity === 'epic' || it.rarity === 'legendary') confettiBurst(it.rarity === 'legendary' ? 80 : 40);
+  blip(it.rarity === 'legendary' ? [784, 988, 1175, 1568] : [784, 1175], .09, 'triangle', .1);
+  confirmBox(`${RARITY[it.rarity][0]}! ${it.name}`, `${SHOP.find(c => c.key === it.cat).label} · added to your garage.`, 'Put it on', () => { profile.equipped[it.cat] = it.id; saveProfile(); applyCosmetics(); renderGarage(); });
+  renderGarage();
+}
+function itemButton(id, inShop){
+  const it = ITEM[id], owned = owns(id), eq = profile.equipped[it.cat] === id, pr = priceOf(it);
+  const b = document.createElement('button');
+  b.className = `item r-${it.rarity}` + (eq ? ' eq' : '') + (gSelId === id && !eq ? ' sel' : '') + (!owned && wallet(pr.cur) < pr.amt ? ' poor' : ''); b.id = (inShop ? 'shop-' : 'item-') + id;
+  let state;
+  if (eq) state = '<span class="state">Equipped</span>';
+  else if (gSelId === id) state = '<span class="state" style="color:var(--ink)">Trying on</span>';
+  else if (owned) state = '<span class="state">Owned</span>';
+  else state = `<span class="price">${curIcon(pr.cur)} ${pr.was ? `<s>${pr.was}</s> ` : ''}${pr.amt}</span>`;
+  b.innerHTML = `${pr.was && !owned ? '<span class="sale">−30%</span>' : ''}${itemIcon(it)}<b>${esc(inShop ? itemLabel(it) : it.name)}</b>${it.price ? `<span class="rar">${RARITY[it.rarity][0]}</span>` : ''}${state}`;
+  b.addEventListener('click', () => selectItem(id));
+  return b;
+}
+function renderShop(el){
+  el.className = 'shopv'; el.textContent = '';
+  const now = new Date(), mid = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1), mins = Math.round((mid - now)/60000);
+  el.insertAdjacentHTML('beforeend', `<div class="sh"><h3>Today’s shop</h3><small>New items in ${Math.floor(mins/60)}h ${mins % 60}m</small></div>`);
+  const grid = document.createElement('div'); grid.className = 'items';
+  todaysShop().items.forEach(id => grid.appendChild(itemButton(id, true)));
+  el.appendChild(grid);
+  el.insertAdjacentHTML('beforeend', '<h3>Bundles · 25% off</h3>');
+  for (const [key, name, ids] of BUNDLES){
+    const left = ids.filter(id => !owns(id)), price = bundlePrice(ids), d = document.createElement('div'); d.className = 'bundle';
+    d.innerHTML = `<div class="row"><b>${esc(name)}</b><small>${ids.length} items${left.length < ids.length ? ` · you own ${ids.length - left.length}` : ''}</small></div>` +
+      `<div class="icons">${ids.map(id => itemIcon(ITEM[id]).replace('class="sw"', `class="sw${owns(id) ? ' own' : ''}" title="${esc(ITEM[id].name)}"`)).join('')}</div>` +
+      `<div class="row"><small>${left.map(id => esc(itemLabel(ITEM[id]))).join(', ') || 'All owned'}</small>${left.length ? `<button class="mini go2" ${profile.coins < price ? 'disabled' : ''}>${COIN} Buy ${price.toLocaleString()}</button>` : '<small>Owned</small>'}</div>`;
+    const btn = d.querySelector('button');
+    if (btn) btn.addEventListener('click', () => {
+      if (profile.coins < price) return;
+      profile.coins -= price; for (const id of left){ profile.owned.push(id); profile.equipped[ITEM[id].cat] = id; }
+      saveProfile(); applyCosmetics(); careerEvent('buy'); logEvent('bundle', { id:key }); toast(`Bought the ${esc(name)} bundle`, true); blip([784, 988, 1175], .08); renderGarage();
+    });
+    el.appendChild(d);
+  }
+  el.insertAdjacentHTML('beforeend', '<h3>Crates</h3>');
+  const c = document.createElement('div'); c.className = 'crate';
+  c.innerHTML = `<div class="row"><b>Rally crate</b><button class="mini go2" ${profile.coins < CRATE.price ? 'disabled' : ''}>${COIN} Open for ${CRATE.price}</button></div>` +
+    `<div class="odds">${CRATE.odds.map(([k, p]) => `<span class="${k}">${RARITY[k][0]} ${p}%</span>`).join('')}</div>` +
+    `<small>One random item you don’t own yet, never a duplicate. Crates only cost coins.</small>`;
+  c.querySelector('button').addEventListener('click', openCrate);
+  el.appendChild(c);
+}
 function renderGarage(){
   renderCoins();
-  $('#gCats').innerHTML = SHOP.map(c => `<button data-c="${c.key}" class="${c.key === gCat ? 'on' : ''}">${c.label} <small style="opacity:.7;font-weight:600">${c.items.filter(([id]) => owns(id)).length}/${c.items.length}</small></button>`).join('');
+  $('#gCats').innerHTML = `<button data-c="shop" class="${gCat === 'shop' ? 'on' : ''}">Shop</button>` + SHOP.map(c => `<button data-c="${c.key}" class="${c.key === gCat ? 'on' : ''}">${c.label} <small style="opacity:.7;font-weight:600">${c.items.filter(([id]) => owns(id)).length}/${c.items.length}</small></button>`).join('');
   const total = Object.keys(ITEM).length, got = Object.keys(ITEM).filter(owns).length;
   $('#gCount').textContent = `You own ${got} of ${total} items.`;
   renderSel();
   const el = $('#gItems'); el.textContent = '';
-  for (const [id] of SHOP.find(c => c.key === gCat).items){
-    const it = ITEM[id], owned = owns(id), eq = profile.equipped[it.cat] === id;
-    const b = document.createElement('button');
-    b.className = 'item' + (eq ? ' eq' : '') + (gSelId === id && !eq ? ' sel' : '') + (!owned && profile.coins < it.price ? ' poor' : ''); b.id = 'item-' + id;
-    let state;
-    if (eq) state = '<span class="state">Equipped</span>';
-    else if (gSelId === id) state = '<span class="state" style="color:var(--ink)">Trying on</span>';
-    else if (owned) state = '<span class="state">Owned</span>';
-    else state = `<span class="price">${COIN} ${it.price}</span>`;
-    b.innerHTML = `${itemIcon(it)}<b>${esc(it.name)}</b>${state}`;
-    b.addEventListener('click', () => selectItem(id));
-    el.appendChild(b);
-  }
+  if (gCat === 'shop'){ renderShop(el); return; }
+  el.className = 'items';
+  for (const [id] of SHOP.find(c => c.key === gCat).items){ el.appendChild(itemButton(id)); }
 }
 $('#gRandom').addEventListener('click', () => { clearPreview(); for (const c of SHOP){ const mine = c.items.map(i => i[0]).filter(owns); profile.equipped[c.key] = mine[Math.floor(Math.random()*mine.length)]; } saveProfile(); applyCosmetics(); renderGarage(); blip([660, 880], .06); });
 $('#gReset').addEventListener('click', () => { clearPreview(); Object.assign(profile.equipped, DEFAULT_EQ); saveProfile(); applyCosmetics(); renderGarage(); });
@@ -4941,6 +5397,7 @@ function applySave(o){
   if (!o || o.type !== 'facet-rally-save') throw new Error('This is not a Facet Rally save.');
   const p = o.profile || {};
   profile.coins = Math.max(0, Math.floor(+p.coins || 0));
+  profile.gems = Math.max(0, Math.floor(+p.gems || 0));
   profile.owned = Array.isArray(p.owned) ? p.owned.filter(id => ITEM[id]) : [];
   profile.equipped = Object.assign({}, DEFAULT_EQ);
   for (const k in DEFAULT_EQ) if (p.equipped && ITEM[p.equipped[k]] && ITEM[p.equipped[k]].cat === k && owns(p.equipped[k])) profile.equipped[k] = p.equipped[k];
@@ -5172,6 +5629,7 @@ function renderCoach(pop){
   if (!school) return;
   const n = SCHOOL_STEPS.length, i = Math.min(school.step, n-1);
   $('#coachStep').textContent = school.step >= n ? 'Lesson complete' : `Driving school · step ${i+1} of ${n}`;
+  $('#coachSkip').hidden = school.step >= n;
   $('#coachText').textContent = school.step >= n ? 'You know the basics. Try Meadow Sprint next, or read the full guide in How to play.' : SCHOOL_STEPS[i][0];
   $('#coachDots').innerHTML = SCHOOL_STEPS.map((_, k) => `<i class="${k < school.step ? 'on' : k === school.step ? 'on' : ''}" style="${k < school.step ? 'background:var(--good)' : ''}"></i>`).join('');
   const el = $('#coach'); el.hidden = race.state === 'menu';
@@ -5185,6 +5643,7 @@ function updateSchool(){
     if (school.step === 6) school.r0 = race.respawns;
     blip([660, 990], .07, 'triangle', .09); vibrate(12);
     renderCoach(true);
+    if (school.step >= SCHOOL_STEPS.length) logEvent('tutorial_done');
     if (school.step >= SCHOOL_STEPS.length && !store.get('facet.school.done')){
       store.set('facet.school.done', 1); addCoins(50);
       setTimeout(() => toast(`Driving school complete! +50 ${COIN}`, true), 1600);
@@ -5213,7 +5672,7 @@ const GUIDE = [
     <li>The <b>F1 circuits</b> are full laps: the finish line is the start line.</li></ul>`],
   ['Timing, ghost and medals', `<p>At each checkpoint a green or red time shows how you compare with your best run. After your first finish a <b>blue ghost car</b> replays your best run, and the chip under your best time shows the live gap.</p>
     <p>Each track has three <b>medals</b>. <b>Bronze</b> for finishing, <b>silver</b> within 35% of the target time, and <b>gold</b> within 15%. The finish screen tells you how far you are from the next one.</p>`],
-  ['Coins, challenges and the Garage', `<p>Five new <b>daily challenges</b> appear each day and change at midnight. They pay 40, 70, 90, 120 and 160 coins, the coins are added the moment you finish one, and clearing all five pays a 100 coin bonus.</p>
+  ['Coins, challenges and the Garage', `<p>Five new <b>daily challenges</b> appear each day and change at midnight. They pay 35, 60, 75, 100 and 135 coins, the coins are added the moment you finish one, and clearing all five pays an 85 coin bonus plus 2 gems.</p>
     <p>Spend coins in the <b>Garage</b> on over 260 items: car bodies, paints, wheels, wings, decals, underglow, trails, toppers, boost flames, window tints, headlights, drift smoke and victory confetti. Tap any item to try it on your car, then tap Buy (or Put it on if you own it). Leaving the Garage takes off anything you didn't buy.</p>`],
   ['Car bodies, weather and career', `<p>The <b>Car body</b> section of the Garage has five cars, and each one drives differently. The <b>Rally</b> car is the all-rounder. The <b>Open-wheeler</b> is the fastest and sharpest on tarmac but slow on grass. The <b>Muscle car</b> pulls hardest off the line but slides in corners. The <b>Dune buggy</b> and <b>Monster truck</b> lose less speed off the road and jump higher. The bars on each car show its speed, acceleration, handling and off-road grip.</p>
     <p>Pick the <b>weather</b> above the track list. <b>Rain</b> makes the road slippery and braking longer. <b>Snow</b> is icier still. <b>Fog</b> and <b>Night</b> don't change grip, but you can't see as far (at night your headlights come on). <b>Random</b> picks a new one each race.</p>
@@ -5223,7 +5682,7 @@ const GUIDE = [
   ['Free Roam and tricks', `<p><b>Free Roam</b> is an open park with no clock. Drive anywhere, hit the loops, ramps, halfpipe, crater and bounce pads, and hunt for the 20 stars (all 20 pay 100 coins once a day).</p>
     <ul><li><b>Spins:</b> steer LEFT or RIGHT in the air.</li><li><b>Backflips:</b> hold BACK in the air, and let go when the car is upright again, or you'll wipe out.</li>
     <li><b>Loops:</b> drive in from either end, straight or at an angle, at 86 km/h or more. Slower and you'll roll back out.</li><li>Combos (a flip plus a spin) score 1.5 times the points.</li></ul>`],
-  ['Playing online', `<ul><li><b>Leaderboards:</b> pick a racing name and every new best time posts to the world leaderboard for that track (times set with admin settings on stay offline).</li>
+  ['Playing online', `<ul><li><b>Leaderboards:</b> every new best time posts to the world leaderboard for that track automatically. Pick your own racing name in Leaderboards any time (times set with admin settings on stay offline).</li>
     <li><b>Multiplayer:</b> create a room and share its 4-letter code or invite link, or join an open room. The host picks the track and weather and starts the race. Up to 8 players.</li>
     <li><b>Track gallery:</b> share a custom track from My tracks, then race, like or copy tracks other players shared.</li>
     <li><b>Google sign-in</b> (in Save &amp; load) saves your progress to your account so it follows you to other devices.</li></ul>`],
@@ -5239,7 +5698,27 @@ function renderGuide(){
 }
 
 /* ---------------- news ---------------- */
-const NEWS = [{ id:'1.7', title:'Update 1.7: Multiplayer, Google sign-in and the Track gallery', date:'2026-11-06', body:`
+const NEWS = [{ id:'1.8', title:'Update 1.8: A new shop, gems and automatic leaderboards', date:'2026-11-06', body:`
+  <p>A brand-new shop, a new currency, and you're on the leaderboards from your very first best time.</p>
+  <h4>The new shop</h4>
+  <ul>
+    <li><b>Today's shop:</b> six hand-picked items that change every day at midnight, two of them 30% off.</li>
+    <li><b>Rarity:</b> every item is now Common, Rare, Epic or Legendary.</li>
+    <li><b>Bundles:</b> seven themed sets, like Neon Night and Golden Champion, for 25% less than buying each piece.</li>
+    <li><b>Rally crates:</b> open one for coins and get a random item you don't own yet, never a duplicate. The odds are shown on the crate.</li>
+  </ul>
+  <h4>Gems</h4>
+  <p>Gems are a new, rarer currency for Legendary items. Earn them from achievements, every fifth career level and clearing all of the day's challenges. Gems can't be bought with real money.</p>
+  <h4>Automatic leaderboards</h4>
+  <p>You don't need to pick a name first any more: your best times go on the leaderboard straight away (as your Google first name if you're signed in, or as "Racer" and a number). Change your name any time in Leaderboards, and all your entries update.</p>
+  <h4>Also in 1.8</h4>
+  <ul>
+    <li>New players start in the driving school automatically, with a Skip button.</li>
+    <li>See something inappropriate? Tap <b>Report</b> next to a leaderboard name or a shared track.</li>
+    <li>Watch the main menu for announcements and events like double coins and featured tracks.</li>
+    <li>Shop prices went up a little and rewards came down a little, so new items mean a bit more.</li>
+  </ul>`},
+  { id:'1.7', title:'Update 1.7: Multiplayer, Google sign-in and the Track gallery', date:'2026-11-06', body:`
   <p>Facet Rally goes properly online.</p>
   <h4>Live multiplayer</h4>
   <p>Open <b>Multiplayer</b> and create a room. Send friends the 4-letter code or the invite link, or let anyone join from the Open rooms list (choose Private room to keep it to people with the code). Up to 8 racers share a track. The host picks the track and the weather and starts the race. Everyone gets the same countdown, you see each other's cars live with name tags, a chip shows your position, and the finish screen shows the results as people cross the line. If the host leaves, someone else takes over.</p>
@@ -5253,7 +5732,7 @@ const NEWS = [{ id:'1.7', title:'Update 1.7: Multiplayer, Google sign-in and the
     <li>Multiplayer, the gallery and sign-in need an internet connection and work on the Facet Rally website.</li>
   </ul>`},
   { id:'1.6', title:'Update 1.6: Online leaderboards', date:'2026-11-06', body:`
-  <p>Facet Rally now has real online leaderboards, and its own website: <b>cooperriftx.github.io/facet-rally</b>.</p>
+  <p>Facet Rally now has real online leaderboards, and its own website.</p>
   <h4>Race the world</h4>
   <p>Open <b>Leaderboards</b> and pick a racing name (no account or sign-up needed). From then on, every new best time you set on a track goes online, and the finish screen shows your world rank. Tap any track in Leaderboards to see its top 10 and where you stand.</p>
   <ul>
@@ -5386,6 +5865,7 @@ $('#hQuick').addEventListener('click', () => startTutorial(TUT_GAME, 'facet.tut.
 $('#wSchool').addEventListener('click', () => { store.set('facet.tut.game', 1); closeOverlay('welcome'); startSchool(); });
 $('#wQuick').addEventListener('click', () => { closeOverlay('welcome'); startTutorial(TUT_GAME, 'facet.tut.game'); });
 $('#wSkip').addEventListener('click', () => { store.set('facet.tut.game', 1); closeOverlay('welcome'); });
+$('#coachSkip').addEventListener('click', () => { logEvent('tutorial_skip', { step:school ? school.step : -1 }); school = null; $('#coach').hidden = true; loadTrack(schoolPrev || TRACKS[0].id); race.state = 'menu'; showScreen('menu'); renderTrackList(); toast('Tutorial skipped. You can do it any time from How to play.'); });
 segBind2('#segMusic', v => { music.on = v === 'on'; store.set('facet.music', v); initAudio(); musicSync(); syncSegs(); });
 $('#bGo').addEventListener('click', startRace);
 // iPad Safari drops the click from a second finger while another finger is held down, so HUD buttons
@@ -5650,7 +6130,8 @@ updateHelp();
 setMuted(audio.muted);
 resize();
 showScreen('menu');
-if (!store.get('facet.tut.game')) openOverlay('welcome');
+// a brand-new player goes straight into the driving school; the coach card has a Skip button
+if (!store.get('facet.tut.game') && !/[?&]room=/.test(location.search)){ store.set('facet.tut.game', 1); setTimeout(() => { if (!school && race.state === 'menu'){ startSchool(); logEvent('tutorial_start'); } }, 400); }
 renderNewsBadge();
 requestAnimationFrame(frame);
 window.__facet = { nag, renderer, mp, mpNow, fbLoad, googleAttach, cloud, B, prepDef, MEDAL_REF, applyCosmetics, career, setWeather, chalEvent, race, car, get track(){ return T; }, inp, TRACKS, admin, buildTrack, sampleTrack, findOverlaps, loadTrack, loadDef, customDef, ghostM, query, profile, get chal(){ return chal; }, get ghost(){ return ghost; } };
